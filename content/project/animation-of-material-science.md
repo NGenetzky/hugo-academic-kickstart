@@ -1,8 +1,9 @@
 +++
-date = "2018-01-23"
+date = "2015-04-29"
 title = "Animation of Material Science"
 summary = "QT application that demonstrates science phenomenon."
 tags = [
+    "c++",
     "qt",
     "sdsu",
 ]

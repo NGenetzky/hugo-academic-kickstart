@@ -66,5 +66,11 @@ aliases = [
 ]
 +++
 
+## Scribd
+
+{{< scribd 260152334 >}}
+
+## Onedrive
+
 <iframe src="https://onedrive.live.com/embed?cid=077E8C5FC4B9BA7C&resid=77E8C5FC4B9BA7C%2168047&authkey=AI2wELIUqvL9cUU&em=2" width="800" style="position: absolute; height: 100%; border: none"></iframe>
 

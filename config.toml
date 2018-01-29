@@ -35,8 +35,11 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
 [outputs]
-  home = [ "HTML", "CSS", "RSS" ]
-  section = [ "HTML", "RSS" ]
+  home = [
+      "html", "css", "rss", # theme = "academic"
+      "jsonfeed" # https://bitquabit.com/post/json-feed-with-hugo/
+      ]
+  section = [ "html", "rss" ]
 
 # Configure BlackFriday Markdown rendering.
 #   See: https://gohugo.io/readfiles/bfconfig/
@@ -292,3 +295,10 @@ defaultContentLanguageInSubdir = false
 # Configure the English version of the website.
 [Languages.en]
   languageCode = "en-us"
+
+# https://bitquabit.com/post/json-feed-with-hugo/
+[outputFormats.jsonfeed]
+  mediaType = "application/json"
+  baseName = "feed"
+  isPlainText = true
+

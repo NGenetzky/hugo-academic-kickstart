@@ -15,10 +15,10 @@ hugo:
   ports:
     - "1313:1313"
 
-web:
-  image: jojomi/nginx-static
-  volumes:
-    - hugo-academic-kickstart-out:/var/www
-  ports:
-    - "80:80"
-  restart: always
+# web:
+#   image: jojomi/nginx-static
+#   volumes:
+#     - hugo-academic-kickstart-out:/var/www
+#   ports:
+#     - "80:80"
+#   restart: always

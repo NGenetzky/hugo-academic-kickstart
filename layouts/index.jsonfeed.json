@@ -6,14 +6,17 @@
     {{- .Permalink | jsonify -}}
   {{- end }},
   "items": [
-    {{ range $index, $entry := first 15 .Data.Pages }}
-    {{- if $index }}, {{ end }}
+    {{- range $index, $entry := first 15 .Data.Pages }}
+    {{- if $index }},{{ end }}
     {
       "id": {{ .Permalink | jsonify }},
       "url": {{ .Permalink | jsonify }},
       "title": {{ .Title | jsonify }},
       "date_published": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
       "content_html": {{ .Content | jsonify }}
+      {{- if isset .Params "tags" }},
+      "tags": {{ .Params.tags | jsonify }}
+      {{- end }}
     }
     {{- end }}
   ]

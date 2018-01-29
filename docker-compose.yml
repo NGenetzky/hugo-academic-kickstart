@@ -4,7 +4,7 @@ hugo:
   image: jojomi/hugo:latest
   volumes:
     - ./:/src
-    - hugo-academic-kickstart-out:/output
+    - ./public:/output
   environment:
     - HUGO_BASEURL=0.0.0.0
     - HUGO_WATCH=true

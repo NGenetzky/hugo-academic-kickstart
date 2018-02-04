@@ -1,7 +1,7 @@
 +++
 title = "RPI with Yocto"
 date = 2018-01-28T22:45:48Z
-draft = true
+draft = false
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
@@ -9,6 +9,8 @@ tags = [
     "rpi",
     "yocto",
     "github",
+    "repo",
+    "poky",
 ]
 categories = []
 
@@ -21,7 +23,6 @@ categories = []
 image = ""
 caption = ""
 preview = true
-
 +++
 
 ## Find my pi

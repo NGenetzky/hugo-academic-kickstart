@@ -66,3 +66,35 @@ Total 62 (delta 25), reused 62 (delta 25)
 [Info]     6.38 MB user additions
 ```
 
+# RPI GPIO Access
+
+## Via Terminal
+
+You can access the terminal through the web on the dashboard.resin.io for the
+device. You can also ssh to the device locally, but you must use port 22222.
+
+The script below will turn off the leds and then turn them on after 1 second;
+led0 and led1 are labeled ACT and PWR on Raspberry Pi 3.
+
+```
+echo 0 > '/sys/devices/platform/leds/leds/led0/brightness'
+echo 0 > '/sys/devices/platform/leds/leds/led1/brightness'
+sleep 1
+echo 255 > '/sys/devices/platform/leds/leds/led0/brightness'
+echo 255 > '/sys/devices/platform/leds/leds/led1/brightness'
+```
+
+## Via the simple-server-python application
+
+- [Flask Quickstart](http://flask.pocoo.org/docs/0.12/quickstart/)
+- [Basic GPIO with Python on Resin](https://github.com/resin-io-projects/resin-rpi-gpio-sample-with-python)
+
+I have never written flask in my life, but it looks easy. I wanted to make it
+as simple as possible to start with and so I used the file access rather than
+`import GPIO from RPi` as was done in GPIO example.
+
+In about 15-30 min I added the ability to set the 'brightness' on the led0/led1
+of the RPI from the web. By enabling the "Public URL" I now have access from
+anywhere in the world at a url like:
+`https://c597e63dd91f97a978af9d00c8863f56.resindevice.io/led/led0/255`
+

@@ -57,3 +57,27 @@ With a little research it appears that maybe I was correct when I thought that
 docker running on x86 would have issues building a container for ARM.
 
 To Be Continued...
+
+## Building for Beaglebone using meta-resin-beaglebone
+
+- resin-os/resin-beaglebone
+
+After cloning the respository and submodules I setup an environment for yocto.
+From previous experience I always like to have a shared downloads and
+sstate-cache. I prefer to have many 'TMPDIR' because I like to compare build
+workspaces and artifacts. I try to avoid cluttering my home directory/partition
+with big files and so this is the structure I choose:
+
+```
+/data/
+/data/yocto-resin
+/data/yocto-resin/downloads
+/data/yocto-resin/sstate-cache
+/data/yocto-resin/resin-beaglebone/0/tmp
+```
+
+I like to put any long commands into scripts (because I'm the good kind of
+lazy), and so my script for this can be found in this
+[gist](https://gist.github.com/NGenetzky/3c943d3766ba5dc16d0cccad0030e4ea). Of
+course I run into build issues. I will debug them another day. It seems like
+any time I run a non-containerize build I run into issues.

@@ -47,7 +47,7 @@ I revisted an old project that explored the capability to generate code from a
 config file describing an API. This project involved manually generating
 the swagger-codegen from [swaggerhub](https://app.swaggerhub.com/).
 
-## Modyfing Project to deploy to Resin.io
+## Modifying Project to deploy to Resin.io
 
 This was much simpler than I thought it was going to be.
 

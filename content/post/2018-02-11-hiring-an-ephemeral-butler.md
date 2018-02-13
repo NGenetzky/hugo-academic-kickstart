@@ -61,7 +61,7 @@ curl -sSL "http://$JENKINS_HOST/pluginManager/api/xml?depth=1&xpath=/*/*/shortNa
 I do not have an entire server farm at my disposal. I have a single powerful
 computer. For this reason I would like to be able to execute builds within
 a docker container. I am researching into the various plugins available and
-other the works of others.
+the works published by others.
 
 Most notably:
 

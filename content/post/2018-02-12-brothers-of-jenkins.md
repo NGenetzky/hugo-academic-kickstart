@@ -51,8 +51,6 @@ different.
 
 The second issue might be encountered when trying to mount a directory during a run
 command.  Mounting directories to container inside Jenkins does not work as expected.
-
-The other problem is slightly more complex.
 [Alternative to Docker-in-Docker](https://www.develves.net/blogs/asd/2016-05-27-alternative-to-docker-in-docker/)
 identifies a possible solution.
 
@@ -67,7 +65,9 @@ docker run \
     ...
 ```
 
-For instance I was able to build this site from within the dockerized jenkins.
+For instance I was able to build
+[this static site](https://github.com/NGenetzky/hugo-academic-kickstart)
+from within the dockerized jenkins.
 I had to change some variables (aka HUGO_DESTINATION) for it to work. As I begin to
 think about it more I actually think the image is trying to do too much for me.
 I simply expect it to provide access to the hugo application, but instead it is
@@ -82,5 +82,10 @@ docker run \
     jojomi/hugo:latest \
     hugo
 ```
+
+My main goal for using docker is to limit the requirements on my Jenkins
+master, I want to keep the master as slim as possible.  I am going to research
+into the plugins more, and might consider creating containerized Jenkins
+slaves.
 
 

@@ -1,6 +1,6 @@
 +++
 title = "RPI 3 Application Container built with Yocto"
-date = 2018-03-03
+date = 2018-03-04
 draft = false
 
 # Tags and categories
@@ -13,16 +13,6 @@ tags = [
     "yocto",
 ]
 categories = []
-
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-# Use `caption` to display an image caption.
-#   Markdown linking is allowed, e.g. `caption = "[Image credit](http://example.org)"`.
-# Set `preview` to `false` to disable the thumbnail in listings.
-#[header]
-#image = ""
-#caption = ""
-#preview = true
 +++
 
 ## Deploying Image built from Dockerfile

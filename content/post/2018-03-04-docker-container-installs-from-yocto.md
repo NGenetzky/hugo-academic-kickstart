@@ -5,7 +5,9 @@ draft = false
 
 tags = [
     "docker",
+    "docker-compose",
     "github",
+    "opkg",
     "yocto",
 ]
 categories = []
@@ -45,13 +47,21 @@ services:
 
 ## Enabling package-management
 
+This white paper is an excellent resource:
+
 * [Using Package Manager to Efficiently Develop Yocto Project-based Systems](https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/package-manager-white-paper.pdf)
 
-The white paper mentioned above is an excellent resource. Since I already have
-a docker-compose file I simply extended it to add the pkgfeed service to host
-ipks from my Yocto build workspace. Currently I simply set the opkg.conf
-manually (`docker exec -it yoctocontainers_ss_1 /bin/vi /etc/opkg/opkg.conf`),
-but I am considering apply the settings at build time.
+I tweaked the x86-64 project's local.conf slightly to enable the ipk and
+package-management.
+
+```
+# local.conf
+PACKAGE_CLASSES = "package_ipk"
+EXTRA_IMAGE_FEATURES += "package-management"
+```
+
+Since I already have a docker-compose file I simply extended it to add the
+pkgfeed service to host ipks from my Yocto build workspace.
 
 ```
 # docker-compose.yaml
@@ -68,7 +78,11 @@ services:
             - "/data/yocto-pyro/1/build/tmp/deploy/ipk:/srv"
 ```
 
+Currently I simply set the opkg.conf manually, but I am considering apply
+the settings at build time.
+
 ```
+# docker exec -it yoctocontainers_ss_1 /bin/vi /etc/opkg/opkg.conf
 # /etc/opkg/opkg.conf
 ...
 src  all    http://pkgfeed:80/all

@@ -9,13 +9,18 @@ title = "NGenetzky's Career"
 summary = "Career of Nathan Genetzky"
 
 # Optional image to display on homepage (relative to `static/img/` folder).
-image_preview = "portrait.jpg"
+image_preview = "2018-06-10-resume-top-right.png"
 
 # Tags: can be used for filtering projects.
 tags = [
 ]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://www.linkedin.com/in/genetzky/"
+external_link = ""
 +++
 
+- nathan@genetzky.us
+- [academic.genetzky.us](http://academic.genetzky.us)
+- [linkedin.com/in/genetzky](https://www.linkedin.com/in/genetzky)
+- [github.com/NGenetzky](https://github.com/NGenetzky)
+- [@NGenetzky](https://twitter.com/NGenetzky)

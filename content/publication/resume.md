@@ -69,3 +69,14 @@ aliases = [
     "/publication/resume/"
 ]
 +++
+
+- Resume is generated from [code](https://github.com/NGenetzky/hugo-resume)
+- The prefered format is [web](http://resume.genetzky.us)
+- The web format will be archived as
+  [png](http://resume.genetzky.us/nathan-genetzky-resume.png) and
+  [pdf](http://resume.genetzky.us/nathan-genetzky-resume.pdf)
+- The prefered plain text format is generated as 
+  [markdown](http://resume.genetzky.us/markdown)
+- The markdown format will be archived as
+  [html](http://resume.genetzky.us/html)
+

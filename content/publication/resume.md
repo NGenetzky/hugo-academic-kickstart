@@ -48,7 +48,7 @@ url_source = ""
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
 url_custom = [
     {name = "markdown", url = "http://resume.genetzky.us/markdown"},
-    {name = "png", url = "http://resume.genetzky.us/png"},
+    {name = "png", url = "http://resume.genetzky.us/nathan-genetzky-resume.png"},
     {name = "html", url = "http://resume.genetzky.us/html"},
     {name = "web", url = "http://resume.genetzky.us"}
 ]

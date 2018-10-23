@@ -18,10 +18,10 @@ categories = []
 # Use `caption` to display an image caption.
 #   Markdown linking is allowed, e.g. `caption = "[Image credit](http://example.org)"`.
 # Set `preview` to `false` to disable the thumbnail in listings.
-#[header]
-#image = ""
-#caption = ""
-#preview = true
+[header]
+image = ""
+caption = ""
+preview = true
 +++
 
 # Getting Started With Raspberry Pi 3 and Python

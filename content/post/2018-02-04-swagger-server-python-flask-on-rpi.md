@@ -20,10 +20,10 @@ categories = []
 # Use `caption` to display an image caption.
 #   Markdown linking is allowed, e.g. `caption = "[Image credit](http://example.org)"`.
 # Set `preview` to `false` to disable the thumbnail in listings.
-#[header]
-#image = ""
-#caption = ""
-#preview = true
+[header]
+image = ""
+caption = ""
+preview = true
 +++
 
 ## More complicationed application

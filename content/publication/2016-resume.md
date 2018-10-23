@@ -56,9 +56,9 @@ highlight = false
 
 # Featured image
 # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-#[header]
-#image = "portrait.jpg"
-#caption = ""
+[header]
+image = "portrait.jpg"
+caption = ""
 +++
 
 ## Scribd

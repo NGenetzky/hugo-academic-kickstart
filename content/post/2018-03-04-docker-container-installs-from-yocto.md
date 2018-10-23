@@ -16,7 +16,7 @@ categories = []
 ## Yocto Application Containers from SCRATCH
 
 Yesterday I wrote about
-[Using Yocto Project for Docker FROM scratch]({{< ref "post/2018-03-03-using-yocto-project-for-docker-from-scratch.md" >}})
+[Using Yocto Project for Docker FROM scratch]({{< ref "/post/2018-03-03-using-yocto-project-for-docker-from-scratch.md" >}})
 , but I quickly realized it is hard to iterate quickly with this workflow. As
 I added support for python-connexion I generated a fresh container image at least
 10 times. This is silly when I am only altering a few packages on the system, and

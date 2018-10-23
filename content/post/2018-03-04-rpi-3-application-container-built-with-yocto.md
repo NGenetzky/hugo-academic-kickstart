@@ -29,7 +29,7 @@ devices.
 ## Deploying Application Image built with Yocto Project
 
 I followed the steps outlined in my last post
-([Using Yocto Project for Docker FROM scratch]({{< ref "post/2018-03-03-using-yocto-project-for-docker-from-scratch.md" >}}))
+([Using Yocto Project for Docker FROM scratch]({{< ref "/post/2018-03-03-using-yocto-project-for-docker-from-scratch.md" >}}))
 but used the 'rpi3' project which uses a different bsp layer and sets the
 machine for rpi3: `MACHINE = "raspberrypi3"`. Here are the resulting images.
 

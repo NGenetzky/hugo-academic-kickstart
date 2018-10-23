@@ -8,7 +8,7 @@ tags = [
     "git",
     "github",
     "matlab",
-    "Particle",
+    "particle",
     "sh",
     "tasker",
 ]

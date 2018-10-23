@@ -40,8 +40,8 @@ projects = ["sdsu/2015-sdsu-ee347"]
 # Tags (optional).
 #   Set `tags = []` for no tags, or use the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
 tags = [
-    "EE",
-    "C",
+    "ee",
+    "c",
     "sdsu",
 ]
 

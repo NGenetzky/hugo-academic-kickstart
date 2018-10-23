@@ -13,8 +13,11 @@ image_preview = ""
 
 # Tags: can be used for filtering projects.
 tags = [
-    "hugo", "static_website", "md",
-    "git", "github",
+    "git",
+    "github",
+    "hugo",
+    "md",
+    "static_website",
 ]
 
 # Optional external URL for project (replaces project detail page).

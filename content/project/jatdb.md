@@ -6,7 +6,7 @@ summary = "JSON API to DB: Fetch JSON from APIs and send to a TinyDB database. "
 tags = [
     "python",
     "trello",
-    "TinyDB",
+    "tinydb",
     "py-trello",
 ]
 external_link = "https://github.com/NGenetzky/jatdb"

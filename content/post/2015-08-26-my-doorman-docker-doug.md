@@ -2,13 +2,13 @@
 title = "My Doorman, Docker Doug"
 description = ""
 tags = [
-    "IFTTT",
-    "Particle",
-    "Pushbullet",
-    "Python",
-    "RPI",
     "ifttt",
-    "Docker",
+    "particle",
+    "pushbullet",
+    "python",
+    "rpi",
+    "ifttt",
+    "docker",
 ]
 date = "2015-08-26"
 +++

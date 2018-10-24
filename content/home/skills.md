@@ -1,12 +1,12 @@
 +++
 # Feature/Skill widget.
-widget = "featurette"  # Do not modify this line!
-date = 2017-09-20T00:00:00
+widget = "featurette"
+date = 2018-10-23T00:00:00
 
 # Activate this widget? true/false
 active = true
 
-title = "Skills"
+title = "Skills & Proficiency"
 subtitle = ""
 
 # Order that this section will appear in.
@@ -22,21 +22,40 @@ weight = 7
 # * ai - academic icons (see https://jpswalsh.github.io/academicons/)
 
 [[feature]]
-  icon = "r-project"
-  icon_pack = "fab"
-  name = "R"
-  description = "90%"
-  
-[[feature]]
-  icon = "chart-line"
+  icon = "terminal"
   icon_pack = "fas"
-  name = "Statistics"
-  description = "100%"  
-  
+  name = "Terminal Workflow (Vim, GNU tools, shell scripting)"
+  description = "50%"
+
 [[feature]]
-  icon = "camera-retro"
+  icon = "code"
   icon_pack = "fas"
-  name = "Photography"
-  description = "10%"
+  name = "Developer Tools (Docker, Jenkins, Git)"
+  description = "50%"
+
+[[feature]]
+  icon = "cog"
+  icon_pack = "fas"
+  name = "Yocto (Build System, Embedded Distro, BSP Support)"
+  description = "50%"  
+
+[[feature]]
+  # icon = "linux"
+  icon = "code"
+  icon_pack = "fas"
+  name = "Linux Kernel (Drivers, Config, BSP)"
+  description = "50%"  
+
+[[feature]]
+  icon = "magic"
+  icon_pack = "fas"
+  name = "Python Middleware"
+  description = "50%"  
+
+[[feature]]
+  icon = "sitemap"
+  icon_pack = "fas"
+  name = "FPGA Development (SW Interface, Reusable Verilog, Automated Builds)"
+  description = "50%"  
 
 +++

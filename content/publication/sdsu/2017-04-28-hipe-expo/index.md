@@ -26,9 +26,6 @@ publication_short = "SDSU"
 abstract = ""
 abstract_short = ""
 
-# Featured image thumbnail (optional)
-image_preview = ""
-
 # Is this a selected publication? (true/false)
 selected = true
 
@@ -56,12 +53,12 @@ url_custom = [
 # Does the content use source code highlighting?
 highlight = false
 
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-[header]
-image = "2017-04-28-hipe-team-at-engineering-expo.jpg"
-caption = "HIPE Team at Engineering Expo"
+[image]
+  caption = "HIPE Team at Engineering Expo"
 
+  # Focal point (optional)
+  # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+  focal_point = "Smart"
 +++
 
 # Abstract

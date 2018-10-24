@@ -25,9 +25,6 @@ publication_short = "SDSU"
 abstract = "The aim of this project was to use an MCP7900 thermistor and a PIC18F8722 microcontroller to control the temperature of a tea-kettle using a “bang-bang” approach. What this means is that if the kettle went over a desired temperature the system will turn it off, and if the kettle temperature goes under the desired temperature, the system turns it back on until it raises to the desired temperature. This project was coded using both the PIC assembly and C programming languages. The C program was more intricate and required more lines of code. This was because the user in C could enter the temperature in degrees Celsius; whereas in the Assembly program, the user was restricted to three temperature settings that would be detected  by using the keypad."
 abstract_short = "The aim of this project was to use an MCP7900 thermistor and a PIC18F8722 microcontroller to control the temperature of a tea-kettle."
 
-# Featured image thumbnail (optional)
-image_preview = "2015-02-27-ee347-project-1.jpg"
-
 # Is this a selected publication? (true/false)
 selected = true
 
@@ -67,10 +64,4 @@ math = false
 
 # Does this page require source code highlighting? (true/false)
 highlight = true
-
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-[header]
-image = "2015-02-27-ee347-project-1.jpg"
-caption = ""
 +++

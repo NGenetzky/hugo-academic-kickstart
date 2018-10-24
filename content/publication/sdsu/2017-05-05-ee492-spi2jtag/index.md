@@ -36,9 +36,6 @@ publication_short = "SDSU"
 abstract = ""
 abstract_short = ""
 
-# Featured image thumbnail (optional)
-image_preview = ""
-
 # Is this a selected publication? (true/false)
 selected = true
 
@@ -65,12 +62,6 @@ url_custom = [
 
 # Does the content use source code highlighting?
 highlight = false
-
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-#[header]
-#image = "portrait.jpg"
-#caption = ""
 +++
 
 # Goal and Motivation:

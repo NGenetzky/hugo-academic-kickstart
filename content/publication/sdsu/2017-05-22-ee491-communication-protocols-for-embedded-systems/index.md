@@ -25,9 +25,6 @@ publication_short = ""
 abstract = "Electrical Engineers use various electronic devices to measure signals and control systems. These individual devices can accomplish many things, but with a communication system in place they can work together to accomplish even greater tasks.  A microcontroller can communicate with various devices to expand its functionality. An embedded system can be interfaced with a device with greater processing power to allow more complex algorithms to be run or to coordinate with systems at other locations. Alternatively, a microcontroller could also utilize a sensor at a remote location. This paper will examine the theory and procedure to implement a few of these communication protocols."
 #abstract_short = ""
 
-# Featured image thumbnail (optional)
-image_preview = ""
-
 # Is this a selected publication? (true/false)
 selected = false
 
@@ -75,11 +72,4 @@ math = false
 
 # Does this page require source code highlighting? (true/false)
 highlight = true
-
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-[header]
-image = ""
-caption = ""
-
 +++

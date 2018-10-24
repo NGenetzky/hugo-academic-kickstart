@@ -22,9 +22,6 @@ publication_short = "genetzky.us"
 abstract = ""
 abstract_short = ""
 
-# Featured image thumbnail (optional)
-image_preview = "2018-06-10-resume-top-right.png"
-
 # Is this a selected publication? (true/false)
 selected = true
 
@@ -56,13 +53,6 @@ url_custom = [
 
 # Does the content use source code highlighting?
 highlight = false
-
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-#[header]
-image = "2018-06-10-resume-top-right.png"
-#caption = ""
-
 
 url = "/resume/"
 aliases = [

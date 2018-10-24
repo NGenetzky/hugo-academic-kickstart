@@ -1,16 +1,11 @@
 +++
 title = "Yocto Source Mirror"
 date = 2018-04-28T05:20:09Z
-
 tags = [
   "bitbake",
   "yocto",
 ]
 categories = []
-
-# [header]
-# image = ""
-# caption = ""
 +++
 
 ## Mirror of Downloads

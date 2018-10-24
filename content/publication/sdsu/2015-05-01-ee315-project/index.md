@@ -25,9 +25,6 @@ publication_short = ""
 abstract = "Concepts learned in Linear Control Systems were used to analyze a system which contains both mechanical and electrical components. Mechanical components were modeled using a Force/Torque-Velocity analogy. Block diagrams resulted from the relationships between the components and signals. Set-up has been done so the system can be simulated in Simulink with the given design parameters."
 abstract_short = ""
 
-# Featured image thumbnail (optional)
-image_preview = ""
-
 # Is this a selected publication? (true/false)
 selected = true
 
@@ -69,13 +66,6 @@ math = false
 
 # Does this page require source code highlighting? (true/false)
 highlight = true
-
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-[header]
-image = "2015-05-01-ee315-project-system-diagram.png"
-caption = "Tower of Terror System Diagram"
-
 +++
 
 ## Part 1 Introduction

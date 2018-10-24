@@ -45,6 +45,8 @@ enableGitInfo = false
   home = [
       # theme = "academic"
       "html", "css", "rss",
+      # https://sourcethemes.com/academic/docs/search/#built-in
+      "search",
       # https://bitquabit.com/post/json-feed-with-hugo/
       "jsonfeed"
       ]
@@ -230,7 +232,7 @@ enableGitInfo = false
     #   2 = APA
     #   3 = MLA
     #   4 = Stream
-    publication_format = 1
+    publication_format = 4
 
     # Talk list format.
     #   0 = Simple
@@ -370,6 +372,12 @@ enableGitInfo = false
 #    url = "#about"
 #    weight = 1
 
+# https://sourcethemes.com/academic/docs/search/#built-in
+[outputFormats.search]
+  baseName = "search"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
 
 # https://bitquabit.com/post/json-feed-with-hugo/
 [outputFormats.jsonfeed]

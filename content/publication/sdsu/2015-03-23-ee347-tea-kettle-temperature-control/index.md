@@ -57,6 +57,7 @@ url_source = ""
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
 url_custom = [
     {name = "docx", url = "https://drive.google.com/file/d/0B0Fa-Ogpus4wWXdQLVNPT0ZnU3c/view" },
+    {name = "gdocpub", url="https://docs.google.com/document/d/e/2PACX-1vQoTJ17RhcwY3SQfgfPhAYf4nm_pR3ndCIdSTXgJBa9wVMKKe5h3iyIcH9bKwpxoWLLfkb3wgvXQZdi/pub"},
 ]
 
 # Does this page contain LaTeX math? (true/false)
@@ -65,3 +66,5 @@ math = false
 # Does this page require source code highlighting? (true/false)
 highlight = true
 +++
+
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vQoTJ17RhcwY3SQfgfPhAYf4nm_pR3ndCIdSTXgJBa9wVMKKe5h3iyIcH9bKwpxoWLLfkb3wgvXQZdi/pub?embedded=true" width=100% height=800></iframe>

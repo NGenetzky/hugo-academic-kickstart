@@ -31,6 +31,8 @@ thermocouple to control the voltage supplied to a heater.
   title="Sputtering System (back)" >}}
 {{< figure src="2014-07-14-sputtering-system-front.jpg"
   title="Sputtering System (front)" >}}
+{{< figure src="2014-07-16-sputtering-system-heater-circuits.jpg"
+  title="Sputtering System (heater circuits)" >}}
 {{< figure src="2014-08-07-sputtering-system-bottom.jpg"
   title="Sputtering System (bottom)" >}}
 {{< figure src="2014-08-08-sputtering-system-rough-vacuum.jpg"

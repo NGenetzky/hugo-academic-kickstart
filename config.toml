@@ -69,7 +69,7 @@ enableGitInfo = false
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
   organizations = [
-      { name = "Vaddio", url = "www.vaddio.com/" }
+      { name = "Vaddio", url = "http://www.vaddio.com/" }
   ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)

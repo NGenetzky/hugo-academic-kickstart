@@ -13,7 +13,7 @@ categories = []
 
 # Installing Windows
 
-* [Rufus](rufus.akeo.ie)
+* [Rufus](http://rufus.akeo.ie)
 
 Downloaded Educational version of Windows 10. Created a bootable drive with Rufus.
 

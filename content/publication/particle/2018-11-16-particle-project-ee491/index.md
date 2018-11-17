@@ -17,9 +17,11 @@ tags = [
     "travis-ci",
 ]
 categories = ["hobby-electronics"]
-projects = ["particle-projects"]
+projects = ["particle-projects", "sdsu/2016-sdsu-ee491"]
 url_custom = [
     {name = "travis-ci", url = "https://travis-ci.org/NGenetzky/particle-project-ee491" },
     {name = "github", url = "https://github.com/NGenetzky/particle-project-ee491" },
 ]
 +++
+
+This project has evolved from [Communication Protocols for Embedded Systems]({{< ref "/publication/sdsu/2017-05-22-ee491-communication-protocols-for-embedded-systems" >}})

@@ -16,7 +16,7 @@ tags = [
 ]
 +++
 
-# Communication Protocols for Embedded Systems (1/2)
+## Communication Protocols for Embedded Systems (1/2)
 
 2016SP
 
@@ -53,7 +53,7 @@ tags = [
     2. Executing any number of commands (no parameters) from Particle API
     3. Executing any number of functions (1 string parameter) from Particle API
 
-# Communication Protocols for Embedded Systems (2/2)
+## Communication Protocols for Embedded Systems (2/2)
 
 2017FA
 
@@ -83,7 +83,7 @@ tags = [
         1. Write LEDs and read Joystick, potentiometers, and switches.
         2. Publish data from analog and digital inputs to Thingspeak channel
 
-# [Notebook](https://drive.google.com/drive/folders/0B8VD0Zdh0kV1MHo3SVFUbmI3Znc?usp=sharing) on GDrive
+## [Notebook](https://drive.google.com/drive/folders/0B8VD0Zdh0kV1MHo3SVFUbmI3Znc?usp=sharing) on GDrive
 
 1. [2016-12-15-Digital Write or Read of up to 32 digital pins via cloud](https://docs.google.com/document/d/1MfsHqb2PtRfqkllonqriMbOFVn3qAxwobkmKheZnfAQ/edit?usp=sharing)
 2. [2016-12-18-Created DigitalPort, Stream and Function](https://docs.google.com/document/d/1OnW6E9injsD21ZcGL0Htflg3XweqlrTiVBDNszY1QXU/edit?usp=sharing)

@@ -1,5 +1,5 @@
 +++
-date = "2017-05-01"
+date = "2016-01-01"
 title = "SDSU-EE491-Independent Study"
 summary = "Communication Protocols for Embedded Systems"
 tags = [
@@ -17,6 +17,9 @@ tags = [
 +++
 
 # Communication Protocols for Embedded Systems (1/2)
+
+2016SP
+
 1. Communication Protocols on Particle Microcontroller
     1. Serial on Particle Microcontroller
     2. I2C on Particle Microcontroller
@@ -51,6 +54,9 @@ tags = [
     3. Executing any number of functions (1 string parameter) from Particle API
 
 # Communication Protocols for Embedded Systems (2/2)
+
+2017FA
+
 1. Digital Port Library
     1. Combine up to 32 digital IO in any order
     2. Provide Read/Write access to each bit.

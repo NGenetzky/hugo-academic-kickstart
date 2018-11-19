@@ -207,7 +207,11 @@ enableGitInfo = false
     'Manuscript',  # 3
     'Report',  # 4
     'Book',  # 5
-    'Book section'  # 6
+    'Book section',  # 6
+    'ACADEMIC_RESERVED0',  # 7
+    'ACADEMIC_RESERVED1',  # 8
+    'ACADEMIC_RESERVED2',  # 9
+    'Github Repository',  # 10
   ]
 
   # Configuration of talk pages.

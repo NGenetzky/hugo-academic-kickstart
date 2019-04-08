@@ -23,17 +23,17 @@ categories = [
 
 ## Objective
 
-This post is discussing a workflow for developing C applications for nordic
-microcontrollers for a team that utilizes gitlab and clang format to optimize
+This post is discussing a workflow for developing C applications for Nordic
+microcontrollers for a team that utilizes Gitlab and Clang Format to optimize
 productivity. Please note that one particular configuration will be
 suggested, but the hope is to document it in such a way that it is clear how
-it can be customized not to suggest to optimum configuration.
+it can be customized not to suggest to an optimum configuration.
 
 ## Tool Dependencies
 
-Dependencies are assumed to be installed in parent directory to this project,
-but those locations can be modified. The versions listed are those used at
-the time of writing, but not strictly required in all cases.
+Dependencies are assumed to be installed in the parent directory to this
+project, but those locations can be modified. The versions listed are those
+used at the time of writing, but not strictly required in all cases.
 
 Required:
 
@@ -83,7 +83,7 @@ With VS Code can reformat code with:
 ## Configuring cpptools
 
 Configuration for [cpptools](https://github.com/Microsoft/vscode-cpptools) is
-uneccesssary for selfcontained projects, but requires a little configuration
+uneccesssary for self-contained projects, but requires a little configuration
 when external libraries are utilized. First I will describe the project
 structure, and then I will describe the matching `c_cpp_properties.json`
 configuration.

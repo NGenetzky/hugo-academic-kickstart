@@ -23,17 +23,24 @@ categories = [
 
 ## Objective
 
-This post is discussing a workflow for developing C applications for nordic
-microcontrollers for a team that utilizes gitlab and clang format to optimize
-productivity. Please note that one particular configuration will be
-suggested, but the hope is to document it in such a way that it is clear how
-it can be customized not to suggest to optimum configuration.
+This post is discussing a workflow for developing C applications for Nordic
+microcontrollers using VS Code. It will focus on a setup for a team that
+utilizes Clang Format, Nordic SDK, and git (with Gitlab). Please note that
+one particular configuration will be suggested, but the hope is to document
+it in such a way that it is clear how it can be customized, not to suggest to
+the optimum configuration.
+
+Goals:
+
+- Avoid code review discussions about code style
+- Easily utilize and explore APIs of external or internal libraries
+- Easily utilize revision history stored in git
 
 ## Tool Dependencies
 
-Dependencies are assumed to be installed in parent directory to this project,
-but those locations can be modified. The versions listed are those used at
-the time of writing, but not strictly required in all cases.
+Dependencies are assumed to be installed in the parent directory to this
+project, but those locations can be modified. The versions listed are those
+used at the time of writing, but not strictly required in all cases.
 
 Required:
 
@@ -47,10 +54,11 @@ Optional:
 
 ## Extension Recommendations
 
-The file below can be installed into
+The file ([extensions.json](extensions.json)) below can be installed into
 `${workspaceFolder}/.vscode/extensions.json` to recommend the extensions to
-users of the project. Obviously if you are not using "gitlab" or one of the
-other tools, than exclude that particular extension.
+users of the project. Obviously, if you are not using "gitlab" or one of the
+other tools then exclude that particular extension. Otherwise, you can also
+search for the names in the Extensions Tab (`[Ctrl+Shift+X]`).
 
 ```json
 {
@@ -66,7 +74,12 @@ other tools, than exclude that particular extension.
 
 ## Code Style
 
-We use "clang-format" to standaridize the code we write and to allow pull
+{{< figure
+  src="code-before-clang-format.png"
+  title="Code before Clang Format"
+>}}
+
+We use "clang-format" to standardize the code we write and to allow pull
 requests to avoid subjective comments about code style. Each project will
 have a defined `.clang-format` file that is `BasedOnStyle: Google`.
 
@@ -82,8 +95,13 @@ With VS Code can reformat code with:
 
 ## Configuring cpptools
 
+{{< figure
+  src="intellisense-of-nrf-sdk.png"
+  title="IntelliSense of NRF SDK"
+>}}
+
 Configuration for [cpptools](https://github.com/Microsoft/vscode-cpptools) is
-uneccesssary for selfcontained projects, but requires a little configuration
+unnecessary for self-contained projects, but requires a little configuration
 when external libraries are utilized. First I will describe the project
 structure, and then I will describe the matching `c_cpp_properties.json`
 configuration.
@@ -104,9 +122,11 @@ repository for our project and will be considered the `${workspaceFolder}`.
 └── nRF-Command-Line-Tools_9_8_1
 ```
 
-Here is the configuration that will allow VSCode and IntellliSense to
-function optimally. Note that `foldername/**` is syntax that will recursively
-search under `foldername`.
+Here is the configuration [c_cpp_properties.json](c_cpp_properties.json) that
+will allow VSCode and IntelliSense to function optimally. IntelliSense is a
+code-completion aid that includes a number of features: List Members,
+Parameter Info, Quick Info, and Complete Word. Note that `foldername/**` is
+the syntax to recursively search under `foldername`.
 
 ```json
 {
@@ -149,7 +169,7 @@ Manager, at Microsoft about C++ Development with Visual Studio Code.
 
 {{< youtube rFdJ68WbkdQ >}}
 
-## Refences and Resources
+## References and Resources
 
 - [Using Visual Studio Code for Nordic nRF5 BLE Debugging](https://electronut.in/vscode-nrf52-dev/)
 - [Cortex-Debug Launch Configurations](https://marcelball.ca/projects/cortex-debug/cortex-debug-launch-configurations/)

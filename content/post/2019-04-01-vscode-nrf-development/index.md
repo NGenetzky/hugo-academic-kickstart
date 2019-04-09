@@ -54,10 +54,11 @@ Optional:
 
 ## Extension Recommendations
 
-The file below can be installed into
+The file ([extensions.json](extensions.json)) below can be installed into
 `${workspaceFolder}/.vscode/extensions.json` to recommend the extensions to
 users of the project. Obviously, if you are not using "gitlab" or one of the
-other tools then exclude that particular extension.
+other tools then exclude that particular extension. Otherwise, you can also
+search for the names in the Extensions Tab (`[Ctrl+Shift+X]`).
 
 ```json
 {
@@ -111,9 +112,9 @@ repository for our project and will be considered the `${workspaceFolder}`.
 └── nRF-Command-Line-Tools_9_8_1
 ```
 
-Here is the configuration that will allow VSCode and IntellliSense to
-function optimally. Note that `foldername/**` is the syntax to recursively
-search under `foldername`.
+Here is the configuration [c_cpp_properties.json](c_cpp_properties.json) that
+will allow VSCode and IntellliSense to function optimally. Note that
+`foldername/**` is the syntax to recursively search under `foldername`.
 
 ```json
 {

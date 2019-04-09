@@ -74,6 +74,11 @@ search for the names in the Extensions Tab (`[Ctrl+Shift+X]`).
 
 ## Code Style
 
+{{< figure
+  src="code-before-clang-format.png"
+  title="Code before Clang Format"
+>}}
+
 We use "clang-format" to standardize the code we write and to allow pull
 requests to avoid subjective comments about code style. Each project will
 have a defined `.clang-format` file that is `BasedOnStyle: Google`.
@@ -89,6 +94,11 @@ With VS Code can reformat code with:
 - `[Ctrl+K Ctrl+F]` - Reformat the selected range
 
 ## Configuring cpptools
+
+{{< figure
+  src="intellisense-of-nrf-sdk.png"
+  title="IntelliSense of NRF SDK"
+>}}
 
 Configuration for [cpptools](https://github.com/Microsoft/vscode-cpptools) is
 unnecessary for self-contained projects, but requires a little configuration
@@ -113,8 +123,10 @@ repository for our project and will be considered the `${workspaceFolder}`.
 ```
 
 Here is the configuration [c_cpp_properties.json](c_cpp_properties.json) that
-will allow VSCode and IntellliSense to function optimally. Note that
-`foldername/**` is the syntax to recursively search under `foldername`.
+will allow VSCode and IntelliSense to function optimally. IntelliSense is a
+code-completion aid that includes a number of features: List Members,
+Parameter Info, Quick Info, and Complete Word. Note that `foldername/**` is
+the syntax to recursively search under `foldername`.
 
 ```json
 {

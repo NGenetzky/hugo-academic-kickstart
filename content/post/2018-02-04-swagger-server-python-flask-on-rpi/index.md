@@ -13,7 +13,7 @@ tags = [
 categories = []
 +++
 
-## More complicationed application
+## More complicated application
 
 Earlier today I deployed a application to my rpi3 that started from an example
 project provided by Resin.io, but now I would like to explore converting an

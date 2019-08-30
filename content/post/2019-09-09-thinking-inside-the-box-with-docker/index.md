@@ -83,5 +83,111 @@ then I was able to locate the configuration files of interest.
 docker exec -it \
     'web-nginx-container' \
     '/bin/sh'
-/etc/nginx # 
+/etc/nginx #
+```
+
+
+## web-nginx: Manually building image with commits to container
+
+Now we are going to stop the container (which will also destory it since we
+specified the `--rm` flag). Next we are going add a file to the container
+from the internet, and save the container an image.
+
+```bash
+→ f='./web-nginx/stop_wget_html_and_commit.sh' && cat "${f}" && "${f}"
+#!/bin/sh
+docker rm -f 'web-nginx-container' || true
+
+docker run -t \
+    --name 'web-nginx-container' \
+    'web-nginx-image' \
+    wget \
+    'https://gist.github.com/physacco/2e1b52415f3a964ad2a542a99bebed8f' \
+    -O '/var/www/wget-gist-from-github.html'
+
+docker commit \
+    'web-nginx-container' \
+    'web-nginx-with-data-image:1.0'
+...
+sha256:30515dc065f479399b54d7e4bb2b67528d6e22d6d97798ec1f7669d6f455ae68
+```
+
+Now we can create a new container from this image we just saved. This time we
+are also going to mount a "volume". We will then navigate to `localhost:80`.
+
+```
+→ f='./web-nginx/run_2nd_image_with_volume.sh' && cat "${f}" && "${f}"
+#!/bin/sh
+SCRIPTDIR="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd -P)"
+cd "${SCRIPTDIR}"
+
+docker rm -f 'web-nginx-container' >/dev/null 2>&1 || true
+
+docker run --detach --rm \
+    --name "web-nginx-container" \
+    --volume "$(pwd):/var/www/mounted-pwd" \
+    --publish 80:80 \
+    'web-nginx-with-data-image:1.0' \
+    'nginx'
+
+xdg-open 'http://localhost:80'
+49a0f1e9474ba8ae3a30a2e4eaca3186bd1923f5a64f1e7726ba3f481c078b92
+```
+
+## web-nginx: Inspect images and containers
+
+Note that this time I specified the 'CMD' for the container explicitly; this
+is because some special metadata about the image was overritten. We will walk
+through the steps to investigate these images. First we will lookup the image
+history:
+
+```
+→ f='./web-nginx/image_history.sh' && cat "${f}" && "${f}"
+#!/bin/sh
+docker image history \
+    'web-nginx-with-data-image:1.0' 
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+30515dc065f4        About an hour ago   wget https://gist.github.com/physacco/2e1b52…   0B                  
+251c0ed12ac2        23 hours ago        /bin/sh -c #(nop) COPY file:3008ecd53df1eb46…   510B                
+02affa393ea5        17 months ago       /bin/sh -c #(nop)  CMD ["nginx"]                0B                  
+<missing>           17 months ago       /bin/sh -c #(nop) WORKDIR /etc/nginx            0B                  
+<missing>           17 months ago       /bin/sh -c #(nop)  VOLUME [/var/www /var/log…   0B                  
+<missing>           17 months ago       /bin/sh -c #(nop)  EXPOSE 443/tcp               0B                  
+<missing>           17 months ago       /bin/sh -c #(nop)  EXPOSE }}}80/tcp                0B                  
+<missing>           17 months ago       /bin/sh -c #(nop) ADD file:b5da41d30400c84d8…   479B                
+<missing>           17 months ago       /bin/sh -c #(nop) ADD file:1a9ecefd9c60d5ed5…   475B                
+<missing>           17 months ago       /bin/sh -c adduser www-data -G www-data -H -…   5.05kB              
+<missing>           17 months ago       /bin/sh -c apk add --update     nginx   && r…   1.37MB              
+<missing>           17 months ago       /bin/sh -c #(nop)  MAINTAINER Johannes Mitlm…   0B                  
+<missing>           19 months ago       /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B                  
+<missing>           19 months ago       /bin/sh -c #(nop) ADD file:093f0723fa46f6cdb…   4.15MB 
+```
+
+After doing this we can then use `docker inspect` to investigate the nitty
+gritty details. We were specifically interested in the "`Cmd`", so we can use
+the magical `--format` parameter to filter down to just this data. I 
+
+```bash
+→ f='./web-nginx/inspect_and_compare.bash' && cat "${f}" && "${f}"
+#!/bin/bash
+
+DEFAULT_A='web-nginx-image'
+DEFAULT_B='web-nginx-with-data-image:1.0'
+
+inspect_and_compare(){
+    local a b format
+    a="${1-${DEFAULT_A}}"
+    b="${2-${DEFAULT_B}}"
+    format='{{ json .Config.Cmd }}'
+
+    diff \
+        <(docker inspect "${a}" --format "${format}") \
+        <(docker inspect "${b}" --format "${format}")
+}
+
+inspect_and_compare "$@"
+1c1
+< ["nginx"]
+---
+> ["wget","https://gist.github.com/physacco/2e1b52415f3a964ad2a542a99bebed8f","-O","/var/www/wget-gist-from-github.html"]
 ```

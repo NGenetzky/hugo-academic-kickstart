@@ -1,5 +1,9 @@
 +++
-title = "poky/oe-init-build-env"
+title = "Yocto Poky oe-init-build-env"
+date = 2018-05-14
+tags = [
+    "yocto",
+]
 +++
 
 <script type="text/javascript"

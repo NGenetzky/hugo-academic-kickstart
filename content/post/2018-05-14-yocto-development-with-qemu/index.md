@@ -1,5 +1,12 @@
 +++
-title = "meta-genet/001-develop-with-qemu"
+title = "Yocto Development with QEMU"
+date = 2018-05-14
+tags = [
+    "docker",
+    "emulation",
+    "qemu",
+    "yocto",
+]
 +++
 
 ### Fetch and Configure

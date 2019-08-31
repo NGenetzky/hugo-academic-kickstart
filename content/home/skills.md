@@ -13,49 +13,49 @@ subtitle = ""
 weight = 7
 
 # Showcase personal skills or business features.
-# 
+#
 # Add/remove as many `[[feature]]` blocks below as you like.
-# 
+#
 # Available icon packs and icons:
 # * fas - Font Awesome standard icons (see https://fontawesome.com/icons)
 # * fab - Font Awesome brand icons (see https://fontawesome.com/icons)
 # * ai - academic icons (see https://jpswalsh.github.io/academicons/)
 
 [[feature]]
-  icon = "terminal"
+  icon = "cog"
   icon_pack = "fas"
-  name = "Terminal Workflow (Vim, GNU tools, shell scripting)"
-  description = "50%"
+  name = "Yocto (Build System, Embedded Distro, BSP Support)"
+  description = "90%"
 
 [[feature]]
   icon = "code"
   icon_pack = "fas"
   name = "Developer Tools (Docker, Jenkins, Git)"
-  description = "50%"
+  description = "85%"
 
 [[feature]]
-  icon = "cog"
+  icon = "terminal"
   icon_pack = "fas"
-  name = "Yocto (Build System, Embedded Distro, BSP Support)"
-  description = "50%"  
+  name = "Terminal Workflow (Vim, GNU tools, shell scripting)"
+  description = "85%"
 
 [[feature]]
   # icon = "linux"
   icon = "code"
   icon_pack = "fas"
   name = "Linux Kernel (Drivers, Config, BSP)"
-  description = "50%"  
+  description = "55%"
 
 [[feature]]
   icon = "magic"
   icon_pack = "fas"
-  name = "Python Middleware"
-  description = "50%"  
+  name = "Python Middleware (DBus, REST, GObject, threading)"
+  description = "35%"
 
 [[feature]]
   icon = "sitemap"
   icon_pack = "fas"
   name = "FPGA Development (SW Interface, Reusable Verilog, Automated Builds)"
-  description = "50%"  
+  description = "25%"
 
 +++

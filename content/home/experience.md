@@ -24,7 +24,7 @@ date_format = "January 2006"
   company_url = "http://www.vaddio.com/"
   location = "Minneapolis, MN"
   date_start = "2017-05-01"
-  date_end = "2018-10-01"
+  #date_end = ""
   description = """
 - Working with FPGA and python developers to create an integrated embedded
 system that routes audio and video signals in professionally built AV systems.
@@ -39,7 +39,7 @@ Git, Bitbake, and Puppet.
   company_url = "https://www.daktronics.com/en-us"
   location = "Brookings, SD"
   date_start = "2016-05-01"
-  date_end = "2017-05-01"
+  #date_end = ""
   description = """
 - Developed C++ code for communication with I2C sensors from a Linux system.
 - Developed a C++ library that simplifies usage of librrd, a C library for

@@ -2,17 +2,23 @@
 title = "IMX7 First Boot"
 date = 2019-05-06T23:07:15-05:00
 draft = false
-tags = []
-categories = []
-[image]
-  caption = ""
-  focal_point = ""
+tags = [
+  "imx",
+  "linux",
+  "nxp",
+  "uboot",
+  "yocto",
+]
+categories = [
+  "hobby-electronics"
+]
+resources = [{ name = "putty_log", src = "u-boot-unable-to-readbootscr.putty.log" }]
 +++
 
 ## New family member, SBC-iMX7!
 
-CompuLab 0815
-SB-SOM Rev1.1 188C02751
+- CompuLab 0815
+- SB-SOM Rev1.1 188C02751
 
 Resources:
 
@@ -69,21 +75,21 @@ SF: Detected M25PX16 with page size 256 Bytes, erase size 64 KiB, total 2 MiB, m
 PCB:   1.0
 SCSI:  SATA link 0 timeout.
 AHCI 0001.0300 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
-flags: 64bit ncq stag pm led clo only pmp pio slum part ccc apst 
+flags: 64bit ncq stag pm led clo only pmp pio slum part ccc apst
 scanning bus for devices...
 Found 0 device(s).
 Net:   cpsw
-Hit any key to stop autoboot:  0 
+Hit any key to stop autoboot:  0
 MMC: no card present
 switch to partitions #0, OK
 mmc1(part 0) is current device
 Failed to mount ext2 filesystem...
 ** Unrecognized filesystem type **
 Unknown command 'nand' - try 'help'
-U-Boot# 
+U-Boot#
 ```
 
-## Yocto Linux Image 
+## Yocto Linux Image
 
 - [2019/01/cl-som-imx7_yocto-linux_2019-01-27.zip](https://www.compulab.com/wp-content/uploads/2019/01/cl-som-imx7_yocto-linux_2019-01-27.zip)
 - [Package contents](https://mediawiki.compulab.com/w/index.php?title=CL-SOM-iMX7:_Yocto_Linux:_Package_contents)
@@ -96,7 +102,7 @@ boot.
 Alternatively we can use bzcat:
 
 ```
-→ bzcat ./cl-som-imx7-yocto-linux/images/cl-som-imx7-image-qt5.sdcard.bz2 | sudo dd of=/dev/sdd bs=1M ; sync                                                 
+→ bzcat ./cl-som-imx7-yocto-linux/images/cl-som-imx7-image-qt5.sdcard.bz2 | sudo dd of=/dev/sdd bs=1M ; sync
 0+310393 records in
 0+310393 records out
 1556086784 bytes (1.6 GB, 1.4 GiB) copied, 121.705 s, 12.8 MB/s

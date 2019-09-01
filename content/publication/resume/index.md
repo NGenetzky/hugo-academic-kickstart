@@ -1,6 +1,6 @@
 +++
-title = "Resume of Nathan Genetzky"
-date = "2018-06-10"
+title = "Nathan Genetzky's Resume"
+date = "2019-08-31"
 authors = ["Nathan Genetzky"]
 
 # Publication type.
@@ -19,8 +19,8 @@ publication = "genetzky.us"
 publication_short = "genetzky.us"
 
 # Abstract and optional shortened version.
-abstract = ""
-abstract_short = ""
+abstract = "My resume is written as code, and is generated into a number of output formats."
+#abstract_short = ""
 
 # Is this a selected publication? (true/false)
 selected = true
@@ -46,9 +46,12 @@ url_source = ""
 url_custom = [
     {name = "html", url = "http://resume.genetzky.us/html"},
     {name = "markdown", url = "http://resume.genetzky.us/markdown"},
-    {name = "pdf", url = "http://resume.genetzky.us/nathan-genetzky-resume.pdf"},
-    {name = "png", url = "http://resume.genetzky.us/nathan-genetzky-resume.png"},
-    {name = "web", url = "http://resume.genetzky.us"}
+    {name = "pdf", url = "http://resume.genetzky.us/pdf"},
+    {name = "png", url = "http://resume.genetzky.us/png"},
+    {name = "web", url = "http://resume.genetzky.us"},
+    {name = "docx", url = "http://resume.genetzky.us/docx"},
+    {name = "docx.pdf", url = "http://resume.genetzky.us/docxpdf"},
+    {name = "html", url = "http://resume.genetzky.us/html"},
 ]
 
 # Does the content use source code highlighting?
@@ -61,12 +64,15 @@ aliases = [
 +++
 
 - Resume is generated from [code](https://github.com/NGenetzky/hugo-resume)
-- The prefered format is [web](http://resume.genetzky.us)
+- The preferred format is [web](http://resume.genetzky.us)
 - The web format will be archived as
-  [png](http://resume.genetzky.us/nathan-genetzky-resume.png) and
-  [pdf](http://resume.genetzky.us/nathan-genetzky-resume.pdf)
-- The prefered plain text format is generated as 
+  [png](http://resume.genetzky.us/png) and
+  [pdf](http://resume.genetzky.us/pdf)
+- The preferred plain text format is generated as 
   [markdown](http://resume.genetzky.us/markdown)
 - The markdown format will be archived as
-  [html](http://resume.genetzky.us/html)
+  [html](http://resume.genetzky.us/html) and
+  [docx](http://resume.genetzky.us/docx) and
+  [pdf](http://resume.genetzky.us/docxpdf)
+
 

@@ -77,8 +77,8 @@ enableGitInfo = false
 
   # Details for the Contact Widget
   email = "nathan@genetzky.us"
-  address = "131 Cheshire Ln Suite 500, Minnetonka, MN 55305"
-  office_hours = "M-F; 08:00-17:00"
+  #address = ""
+  #office_hours = "M-F; 08:00-17:00"
   phone = ""
   skype = ""
   telegram = ""

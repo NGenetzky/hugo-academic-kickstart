@@ -115,7 +115,7 @@ sha256:30515dc065f479399b54d7e4bb2b67528d6e22d6d97798ec1f7669d6f455ae68
 Now we can create a new container from this image we just saved. This time we
 are also going to mount a "volume". We will then navigate to `localhost:80`.
 
-```
+```bash
 → f='./web-nginx/run_2nd_image_with_volume.sh' && cat "${f}" && "${f}"
 #!/bin/sh
 SCRIPTDIR="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd -P)"
@@ -141,7 +141,7 @@ is because some special metadata about the image was overritten. We will walk
 through the steps to investigate these images. First we will lookup the image
 history:
 
-```
+```bash
 → f='./web-nginx/image_history.sh' && cat "${f}" && "${f}"
 #!/bin/sh
 docker image history \
@@ -191,3 +191,167 @@ inspect_and_compare "$@"
 ---
 > ["wget","https://gist.github.com/physacco/2e1b52415f3a964ad2a542a99bebed8f","-O","/var/www/wget-gist-from-github.html"]
 ```
+
+## cli-pyflame: Simple application with command line interface in python
+
+Second we are going to build our own application from scratch. Our
+application has some dependencies and we would like to make the final image
+as small as possible. We will utilize the technique outlined by [Itamar
+Turner-Trauring](itamar@pythonspeed.com) in the following articles:
+
+- [multi-stage-docker-python][]
+- [activate-virtualenv-dockerfile][]
+
+### Dockerfile
+
+We will break down [./cli-pyflame/Dockerfile][] to identify the key parts.
+
+We will use `apt` to install some system level dependencies. Note that in
+order to conserve space we must clear apt's caches before the end of the
+`RUN` statement. Note that these build tools are not required for our
+application to be able to run, but are only neccessary to build the
+application.
+
+```Dockerfile
+# Configure apt and install packages
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+        gcc \
+    && apt-get autoremove -y \
+    && apt-get clean -y \
+    && rm -rf /var/lib/apt/lists/*
+```
+
+Next we set up a python virtual env and configure the container to use this
+environment by using environment variables.
+
+```Dockerfile
+ENV VIRTUAL_ENV='/opt/venv/'
+RUN python -m venv "${VIRTUAL_ENV}"
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+```
+
+Next we will install python dependencies. Note that we `COPY` the
+`requirements.txt` separately before we `COPY` the rest of the application.
+This is an optimization which allows for more effective use of the build
+cache. When running `docker build` it will attempt to use a cached version of
+each layer which has not had any changes - which means that unless
+`requirements.txt` is modified then the cache from the previous build will be
+used.
+
+```Dockerfile
+WORKDIR /usr/src/app/
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+```
+
+Here we:
+
+1. Build it initially.
+2. Build it again and see that cache is used.
+3. Build it again after invalidating the cache for `requirements.txt`
+
+```bash
+→ f='./cli-pyflame/build.sh' && cat "$f" && "$f"
+#!/bin/sh
+SCRIPTDIR="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd -P)" #"
+cd "${SCRIPTDIR}"
+docker build \
+    --tag 'cli-pyflame-image' \
+    './'
+Sending build context to Docker daemon   7.68kB
+Step 1/11 : FROM python:3.7-slim AS compile-image
+...
+Successfully built a7ddb6b4d33f
+Successfully tagged cli-pyflame-image:latest
+→ f='./cli-pyflame/build.sh' && "$f"  | grep -A 1 'Step 8'
+Step 8/11 : RUN pip install -r requirements.txt
+ ---> Using cache
+→ echo '#' >> cli-pyflame/requirements.txt && f='./cli-pyflame/build.sh' && "$f"  | grep -A 1 'Step 8'
+Step 8/11 : RUN pip install -r requirements.txt
+ ---> Running in 28b9a235d42a
+```
+
+Here we actually `COPY` in the source code, and then install the application.
+
+```
+COPY ./ /usr/src/app/
+RUN pip install .
+```
+
+Here is where we configure the `ENTRYPOINT`. I highly recommend reviewing
+this article ([docker-run-vs-cmd-vs-entrypoint][]) to understand the
+intricies, advantages and disadvangtages of `CMD` and `ENTRYPOINT`.
+
+```
+ENTRYPOINT ["python", "-m", "pyflame.flame"]
+```
+
+### Run
+
+Run with default entrypoint with no `CMD`.
+
+```bash
+→ f='./cli-pyflame/run.sh' && cat "$f" && "$f"
+#!/bin/sh
+docker run --rm \
+    --name "cli-pyflame-container" \
+    'cli-pyflame-image' "$@"
+NAME
+    flame.py
+
+SYNOPSIS
+    flame.py COMMAND
+
+COMMANDS
+    COMMAND is one of the following:
+
+     lite
+```
+
+Next we will change the `CMD` by just adding argument at the end.
+
+```bash
+→ f='./cli-pyflame/run.sh' && "$f" lite -h
+INFO: Showing help with the command 'flame.py lite -- --help'.
+
+NAME
+    flame.py lite
+
+SYNOPSIS
+    flame.py lite N <flags>
+
+POSITIONAL ARGUMENTS
+    N
+
+FLAGS
+    --of=OF
+
+NOTES
+    You can also use flags syntax for POSITIONAL ARGUMENTS
+```
+
+Alternatively could change the `ENTRYPOINT` when we call `docker run`. Here
+we will launch an interactive bash shell, and then we can call the cli
+multiple times.
+
+```
+→ f='./cli-pyflame/console.sh' && cat "$f" && "$f"
+#!/bin/sh
+docker run -it --rm \
+    --entrypoint '/bin/bash' \
+    --name "cli-pyflame-container" \
+    'cli-pyflame-image' \
+    "$@"
+root@678d6adbdc25:/usr/src/app# python -m pyflame.flame lite 1 apple
+WARNING:root:lit 1 apple on fire
+root@678d6adbdc25:/usr/src/app# python -m pyflame.flame lite 2
+WARNING:root:lit 2 candles on fire
+```
+
+[thinking-inside-the-box-with-docker]: https://gitlab.com/ngenetzky-dojofive/thinking-inside-the-box-with-docker
+[multi-stage-docker-python]: https://pythonspeed.com/articles/multi-stage-docker-python/
+[activate-virtualenv-dockerfile]: https://pythonspeed.com/articles/activate-virtualenv-dockerfile/
+[./cli-pyflame/Dockerfile]: https://gitlab.com/ngenetzky-dojofive/thinking-inside-the-box-with-docker/blob/69924697de0530dd431233cf97fb1c513c40b5ea/cli-pyflame/Dockerfile
+[docker-run-vs-cmd-vs-entrypoint]: https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/

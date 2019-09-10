@@ -2,7 +2,7 @@
 title: "Thinking Inside the Box With Docker"
 date: 2019-09-09
 draft: false
-authors: ["Natahn Genetzky"]
+authors: ["Nathan Genetzky"]
 categories: ["dojofive"]
 tags:
 - bash

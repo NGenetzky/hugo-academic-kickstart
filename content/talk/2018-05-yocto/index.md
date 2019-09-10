@@ -9,7 +9,7 @@ abstract = "This talk is divided into two parts.\n- Yocto Concepts and Quick Sta
 #abstract_short = ""
 event = "Penguins Unbound: May 2018 Meeting"
 event_url = "https://www.meetup.com/PenguinsUnbound/events/246582571/"
-location = "Minneaplis, MN" # Location of event.
+location = "Roseville, MN, USA" # Location of event.
 selected = true # Is this a selected talk? (true/false)
 tags = [
   "meetup",

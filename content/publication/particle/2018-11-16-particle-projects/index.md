@@ -6,7 +6,7 @@ draft = false
 authors = ["Nathan Genetzky"]
 publication = "Github"
 publication_short = "Github"
-publication_types = ["10"]
+#publication_types = ["10"]
 
 tags = [
     "c++",

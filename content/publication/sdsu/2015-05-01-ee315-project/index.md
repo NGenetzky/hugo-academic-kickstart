@@ -26,7 +26,7 @@ abstract = "Concepts learned in Linear Control Systems were used to analyze a sy
 abstract_short = ""
 
 # Is this a selected publication? (true/false)
-selected = true
+featured = true
 
 # Projects (optional).
 #   Associate this publication with one or more of your projects.
@@ -56,7 +56,7 @@ url_source = ""
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
-url_custom = [
+links = [
     {name = "Part1.docx", url = "https://github.com/NGenetzky/sdsu/raw/f0aaaf394de0f5fed80e60aae15a5ac29b5bd451/ee315/project/EE315-project-p1-report.docx"},
     {name = "Part3.docx", url = "https://github.com/NGenetzky/sdsu/raw/f0aaaf394de0f5fed80e60aae15a5ac29b5bd451/ee315/project/EE315-project-p3-report.docx"},
 ]

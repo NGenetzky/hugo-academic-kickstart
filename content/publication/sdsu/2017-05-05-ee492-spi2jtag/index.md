@@ -37,7 +37,7 @@ abstract = ""
 abstract_short = ""
 
 # Is this a selected publication? (true/false)
-selected = true
+featured = true
 
 # Projects (optional).
 #   Associate this publication with one or more of your projects.
@@ -57,7 +57,7 @@ url_source = ""
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
-url_custom = [
+links = [
 ]
 
 # Does the content use source code highlighting?

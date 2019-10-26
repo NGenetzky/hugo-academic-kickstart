@@ -1,23 +1,37 @@
 +++
 # Experience widget.
-widget = "experience"  # Do not modify this line!
+widget = "experience"  # See https://sourcethemes.com/academic/docs/page-builder/
+headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
+weight = 40  # Order that this section will appear.
 
 title = "Experience"
 subtitle = ""
 
-# Order that this section will appear in.
-weight = 8
-
 # Date format for experience
 #   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
-date_format = "January 2006"
+date_format = "Jan 2006"
 
 # Experiences.
 #   Add/remove as many `[[experience]]` blocks below as you like.
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
+[[experience]]
+  title = "Software Engineer"
+  company = "Dojo Five"
+  company_url = "http://www.dojofive.com/"
+  location = "Minneapolis, MN"
+  date_start = "2018-11-01"
+  #date_end = ""
+  description = """
+- Develop embedded software for Particle, Nordic, and STM32 microcontrollers
+- Utilized custom hardware with the Particle platform for a custom door
+access solution
+- Developed with NRF52 SDK to create devices in a complex robotic system with
+BLE services
+"""
+
 [[experience]]
   title = "Software Engineer 1"
   company = "System Team at Vaddio"
@@ -39,7 +53,7 @@ Git, Bitbake, and Puppet.
   company_url = "https://www.daktronics.com/en-us"
   location = "Brookings, SD"
   date_start = "2016-05-01"
-  #date_end = ""
+  date_end = "2017-05-01"
   description = """
 - Developed C++ code for communication with I2C sensors from a Linux system.
 - Developed a C++ library that simplifies usage of librrd, a C library for

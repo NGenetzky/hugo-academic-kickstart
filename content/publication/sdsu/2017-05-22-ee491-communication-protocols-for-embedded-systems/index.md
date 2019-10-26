@@ -28,7 +28,7 @@ tags = [
 ]
 
 url_code = "https://github.com/NGenetzky/particle-projects/tree/883cf31f2f6071c16c36938b8094ae88473e3047/ee491"
-url_custom = [
+links = [
     {name = "docx", url = "https://github.com/NGenetzky/documents/raw/master/2017/05/22/Communication_Protocols_for_Embedded_Systems-report.docx" },
     {name = "pub", url = "https://github.com/NGenetzky/documents/raw/master/2017/04/07/Communication_Protocols_for_Embedded_Systems-poster.pub" },
 ]

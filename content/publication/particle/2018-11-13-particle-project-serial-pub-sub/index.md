@@ -18,7 +18,7 @@ tags = [
 ]
 categories = ["hobby-electronics"]
 projects = ["particle-projects"]
-url_custom = [
+links = [
     {name = "travis-ci", url = "https://travis-ci.org/NGenetzky/particle-project-serial-pub-sub" },
     {name = "github", url = "https://github.com/NGenetzky/particle-projects-serial-pub-sub" },
 ]

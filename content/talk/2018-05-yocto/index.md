@@ -28,7 +28,7 @@ url_slides = "https://genet.netlify.com/talk/2018-05-yocto/"
 url_video = ""
 url_poster = ""
 url_source = ""
-url_custom = [{ name = "site", url = "https://genet.netlify.com" }]
+links = [{ name = "site", url = "https://genet.netlify.com" }]
 
 # Does the content use math formatting?
 math = false

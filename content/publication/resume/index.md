@@ -43,7 +43,7 @@ url_source = ""
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
-url_custom = [
+links = [
     {name = "html", url = "http://resume.genetzky.us/html"},
     {name = "markdown", url = "http://resume.genetzky.us/markdown"},
     {name = "pdf", url = "http://resume.genetzky.us/pdf"},

@@ -33,7 +33,7 @@ categories = [
 projects = ["2015-sdsu-ee347"]
 
 url_code = "https://github.com/NGenetzky/sdsu/tree/8607497e510e2b01480774f47e3ef9807d56d2e0/ee347/project1"
-url_custom = [
+links = [
     {name = "docx", url = "https://drive.google.com/file/d/0B0Fa-Ogpus4wWXdQLVNPT0ZnU3c/view" },
     {name = "gdocpub", url="https://docs.google.com/document/d/e/2PACX-1vQoTJ17RhcwY3SQfgfPhAYf4nm_pR3ndCIdSTXgJBa9wVMKKe5h3iyIcH9bKwpxoWLLfkb3wgvXQZdi/pub"},
 ]

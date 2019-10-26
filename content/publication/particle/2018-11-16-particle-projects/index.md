@@ -18,7 +18,7 @@ tags = [
 ]
 categories = ["hobby-electronics"]
 projects = ["particle-projects"]
-url_custom = [
+links = [
     {name = "github", url = "https://github.com/NGenetzky/particle-project-projects" },
 ]
 +++

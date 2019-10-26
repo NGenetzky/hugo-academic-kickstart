@@ -18,7 +18,7 @@ tags = [
 ]
 categories = ["hobby-electronics"]
 projects = ["particle-projects"]
-url_custom = [
+links = [
     {name = "travis-ci", url = "https://travis-ci.org/NGenetzky/particle-library-iot-register" },
     {name = "github", url = "https://github.com/NGenetzky/particle-library-iot-register" },
 ]

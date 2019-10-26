@@ -56,7 +56,7 @@ url_source = ""
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
-url_custom = [
+links = [
     {name = "Part1.docx", url = "https://github.com/NGenetzky/sdsu/raw/f0aaaf394de0f5fed80e60aae15a5ac29b5bd451/ee315/project/EE315-project-p1-report.docx"},
     {name = "Part3.docx", url = "https://github.com/NGenetzky/sdsu/raw/f0aaaf394de0f5fed80e60aae15a5ac29b5bd451/ee315/project/EE315-project-p3-report.docx"},
 ]

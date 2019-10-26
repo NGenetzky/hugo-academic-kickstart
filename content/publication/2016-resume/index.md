@@ -43,7 +43,7 @@ url_source = ""
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
-url_custom = [
+links = [
     {name = "Scribd", url = "https://www.scribd.com/document/260152334/Genetzky-Nathan-Resume"},
     {name = "Onedrive", url = "https://1drv.ms/b/s!Any6ucRfjH4HhJNPN9rWE1XC7Zh2pA"}
 ]

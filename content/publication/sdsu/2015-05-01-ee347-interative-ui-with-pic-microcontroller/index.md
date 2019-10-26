@@ -15,7 +15,7 @@ publication_short = "SDSU"
 abstract = "This project involves various hardware components as well as the PIC18 with Development Board. The ability for the PIC to obtain virtually simultaneous readings of multiple analog signals was used to determine the position of a joystick. The Liquid Crystal Display built into the development board was a critical portion of this project and provided a way to communicate with the user. The 8x8 RGB LED Matrix provided a colorful way to demonstrate the capability of the interactive user interface."
 abstract_short = "This project involves various hardware components as well as the PIC18 with Development Board."
 
-selected = true
+featured = true
 
 tags = [
     "c",

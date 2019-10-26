@@ -10,7 +10,7 @@ abstract = "This talk is divided into two parts.\n- Yocto Concepts and Quick Sta
 event = "Penguins Unbound: May 2018 Meeting"
 event_url = "https://www.meetup.com/PenguinsUnbound/events/246582571/"
 location = "Roseville, MN, USA" # Location of event.
-selected = true # Is this a selected talk? (true/false)
+featured = true # Is this a selected talk? (true/false)
 tags = [
   "meetup",
   "penguins-unbound",

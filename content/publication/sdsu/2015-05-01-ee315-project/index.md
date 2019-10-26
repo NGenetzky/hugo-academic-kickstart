@@ -26,7 +26,7 @@ abstract = "Concepts learned in Linear Control Systems were used to analyze a sy
 abstract_short = ""
 
 # Is this a selected publication? (true/false)
-selected = true
+featured = true
 
 # Projects (optional).
 #   Associate this publication with one or more of your projects.

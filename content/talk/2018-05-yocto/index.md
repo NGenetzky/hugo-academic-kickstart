@@ -36,7 +36,7 @@ math = false
 
 What we'll do:
 
-We have a guest speaker, [Nathan Genetzky](nathan.genetzky.us), who is going
+We have a guest speaker, [Nathan Genetzky](http://nathan.genetzky.us), who is going
 to talk about [The Yocto Project](https://www.yoctoproject.org/).
 
 What to bring:

@@ -21,7 +21,7 @@ I used the following code in
 
 - [scripts/test-shellcheck.bash](https://github.com/NGenetzky/shlib/blob/5843f1b2cc4e76cd22ce9c79e4382b1f6db18e45/scripts/test-shellcheck.bash)
 
-```shell
+```bash
 #!/bin/bash
 
 SCRIPTDIR="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd -P)"
@@ -47,7 +47,7 @@ fi
 
 - [.travis.yml](https://github.com/NGenetzky/shlib/blob/ab92c00f75041620bc19d0cf930c67d9049925be/.travis.yml)
 
-```shell
+```yaml
 sudo: required
 dist: trusty
 language: bash

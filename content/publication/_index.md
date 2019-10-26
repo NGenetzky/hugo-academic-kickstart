@@ -11,3 +11,7 @@ highlight = false
 #   3 = MLA
 list_format = 3
 +++
+
+<!-- We use these so that we don't get a warning from linkcheck -->
+<a href="#" id="0" style="display: none">Check</a>
+<a href="#" id="4" style="display: none">Check</a>

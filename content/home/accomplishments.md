@@ -31,7 +31,7 @@ date_format = "Jan 2006"
 [[item]]
   organization = "South Dakota State University"
   organization_url = "https://www.sdstate.edu/"
-  title = "LFD435: Developing Embedded Linux Device Drivers"
+  title = "Authorized Scanning Electronic Microscope Operator"
   #url = ""
   #certificate_url = ""
   date_start = "2014-08-01"

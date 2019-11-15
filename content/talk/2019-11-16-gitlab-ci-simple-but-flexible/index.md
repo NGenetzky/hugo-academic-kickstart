@@ -109,5 +109,67 @@ particle_build:
       - build/
 ```
 
+There are many predefined variables that are injected into the environment.
+
+- [Predefined environment variables reference](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
+
+
+## Using Google Test Framework (GTest) to test C or C++
+
+The next example is a derivative work. Originally this was: "C/C++ unit test
+demo using Google Test deployed to Travis-CI with test coverage deployed to
+Coveralls". I forked this project and added gitlab-ci support.
+
+- Upstream project: [gtest-demo](https://github.com/bast/gtest-demo)
+- GTest Demo thanks to [Radovan Bast](https://github.com/bast).
+- Container Travis setup thanks to [Joan Massich](https://github.com/massich).
+- Clean-up in CMake code thanks to [Claus Klein](https://github.com/ClausKlein).
+
+The changes necessary to use this demo with gitlab are identified in a single
+PR. The dockbuild, from the [dockcross][] project, is a key part of this
+example. With the images provided by that project we could quickly test again
+a matrix of different architectures and GCC versions. Also, by using an
+existing docker image you cut down the build time required to install the
+packages.
+
+- [gtest-demo/merge_requests/1](https://gitlab.com/ngenetzky-dojofive/gtest-demo/merge_requests/1)
+- [dockcross][]
+
+Here is the `.gitlab-ci.yml`:
+
+```yaml
+gtest:
+  stage: test
+  image: gcc
+  before_script:
+    - ci/gitlab_gtest_pre.sh
+  script:
+    - ci/gitlab_gtest.sh
+  artifacts:
+    paths:
+      - build/
+    expire_in: 30 days
+
+u1804-gtest:
+  stage: test
+  image: dockbuild/ubuntu1804-gcc7:latest
+  script:
+    - ci/gitlab_gtest.sh
+  artifacts:
+    paths:
+      - build/
+    expire_in: 30 days
+
+```
+
+This is key part of `ci/gitlab_gtest.sh`
+
+```bash
+cmake -H. -Bbuild
+cd build
+cmake --build .
+ctest
+```
 
 [shellcheck]: https://github.com/koalaman/shellcheck
+[dockcross]: https://github.com/dockcross/dockcross

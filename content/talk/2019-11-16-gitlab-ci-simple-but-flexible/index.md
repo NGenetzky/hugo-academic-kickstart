@@ -73,3 +73,41 @@ find ./* \
   \( -iname '*.bash' -or -iname '*.sh' \) \
   -exec shellcheck "$@" {} +
 ```
+
+## Using docker buildpack to build microcontroller firmware
+
+Next we will use a docker image to compile microcontroller applications for
+the Particle family of devices. I added this to one of my trivial projects,
+and isolated it into a single PR.
+
+- image from
+[dockerhub](https://hub.docker.com/r/particle/buildpack-particle-firmware)
+- created from
+[particle-iot/firmware-buildpack-builder](https://github.com/particle-iot/firmware-buildpack-builder)
+- example usage in
+[particle-project-serial-pub-sub/merge_requests/1](https://gitlab.com/NGenetzky/particle-project-serial-pub-sub/merge_requests/1)
+
+Here is the `gitlab-ci`, which is what we will focus on. Added environment
+variables and artifacts. Note that most of the complexity is well hidden
+behind the buildpack, and so this becomes very trivial to add to new
+projects. Buildpacks exist for a wide variety of projects.
+
+```yaml
+particle_build:
+  stage: build
+  image: particle/buildpack-particle-firmware:1.4.2-xenon
+  variables:
+    PLATFORM: xenon
+    PARTICLE_BUILD_IN: src/
+    PARTICLE_BUILD_OUT: build/
+    # -Werror: Make all warnings into errors.
+    CFLAGS: '-Werror'
+  script:
+    - ci/particle_build.bash
+  artifacts:
+    paths:
+      - build/
+```
+
+
+[shellcheck]: https://github.com/koalaman/shellcheck

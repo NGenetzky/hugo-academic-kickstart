@@ -11,10 +11,23 @@ date_end: 2019-11-16T12:00:00
 publishDate: "2019-11-12"
 authors: [ "nathan-genetzky" ]
 tags:
+- "bash"
+- "c"
 - "ci"
+- "ci-cd"
+- "cpp"
 - "devops"
+- "docker"
+- "git-annex"
+- "github"
 - "gitlab"
 - "gitlab-ci"
+- "gitops"
+- "meetup"
+- "penguins-unbound"
+- "python"
+- "sh"
+- "shell"
 
 featured: true
 links:
@@ -22,10 +35,15 @@ links:
   url: "slides/2019-11-16-gitlab-ci-simple-but-flexible"
   icon_pack: fas
   icon: chalkboard
-# url_slides:
-# url_code:
-# url_pdf:
-# url_video:
+- name: shlib
+  url: "https://github.com/ngenetzky/shlib"
+- name: gtest-demo
+  url: "https://gitlab.com/ngenetzky-dojofive/gtest-demo/"
+- name: particle-project-serial-pub-sub
+  url: "https://gitlab.com/NGenetzky/particle-project-serial-pub-sub/"
+- name: git-annex-adapter
+  url: "https://github.com/NGenetzky/git-annex-adapter/"
+
 projects: []
 ---
 
@@ -290,6 +308,7 @@ external repos, even if they are private.
 - [ci-cd-github][]
 - [ci-cd-external][]
 
+[shlib]: https://github.com/ngenetzky/shlib
 [shellcheck]: https://github.com/koalaman/shellcheck
 [dockcross]: https://github.com/dockcross/dockcross
 [kaniko]: https://github.com/GoogleContainerTools/kaniko

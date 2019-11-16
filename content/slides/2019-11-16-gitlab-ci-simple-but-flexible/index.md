@@ -3,10 +3,23 @@ title: Gitlab CI Simple but Flexible
 summary: Gitlab-CI is an amazing platform that makes CI pipelines simple and easy.
 authors: [ "nathan-genetzky" ]
 tags:
+- "bash"
+- "c"
 - "ci"
+- "ci-cd"
+- "cpp"
 - "devops"
+- "docker"
+- "git-annex"
+- "github"
 - "gitlab"
 - "gitlab-ci"
+- "gitops"
+- "meetup"
+- "penguins-unbound"
+- "python"
+- "sh"
+- "shell"
 categories: []
 date: "2019-11-16"
 slides:
@@ -60,7 +73,7 @@ Use these links to guide you through connecting gitlab and github:
 
 ---
 
-Although the gitlab-ci integration added to shlib was very simple it can
+Although the gitlab-ci integration added to [shlib][] was very simple it can
 serve to demonstrate some core features:
 
 1. Each "job" can run in a docker container that is from a docker image of
@@ -320,6 +333,7 @@ external repos, even if they are private.
 - [ci-cd-github][]
 - [ci-cd-external][]
 
+[shlib]: https://github.com/ngenetzky/shlib
 [shellcheck]: https://github.com/koalaman/shellcheck
 [dockcross]: https://github.com/dockcross/dockcross
 [kaniko]: https://github.com/GoogleContainerTools/kaniko

@@ -57,6 +57,8 @@ serve to demonstrate some core features:
 our choice.
 2. The `script` attribute can be shell commands, or an executable script.
 
+`gitlab-ci.yaml`:
+
 ```yaml
 test-shellcheck:
   stage: test
@@ -86,11 +88,7 @@ and isolated it into a single PR.
 [particle-iot/firmware-buildpack-builder](https://github.com/particle-iot/firmware-buildpack-builder)
 - example usage in
 [particle-project-serial-pub-sub/merge_requests/1](https://gitlab.com/NGenetzky/particle-project-serial-pub-sub/merge_requests/1)
-
-Here is the `gitlab-ci`, which is what we will focus on. Added environment
-variables and artifacts. Note that most of the complexity is well hidden
-behind the buildpack, and so this becomes very trivial to add to new
-projects. Buildpacks exist for a wide variety of projects.
+`gitlab-ci`:
 
 ```yaml
 particle_build:
@@ -109,16 +107,23 @@ particle_build:
       - build/
 ```
 
+We have added environment variables to interact with the buildpack, and we
+have indicates the locations of the artifacts produced by the buildpack.
+
 There are many predefined variables that are injected into the environment.
 
 - [Predefined environment variables reference](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
 
+Note that most of the complexity hidden behind the buildpack. Buildpacks
+exist for a wide variety of projects.
+[(IBM Cloud Docs Buildpacks)](https://cloud.ibm.com/docs/runtimes-common?topic=runtimes-common-available_buildpacks)
+
 
 ## Using Google Test Framework (GTest) to test C or C++
 
-The next example is a derivative work. Originally this was: "C/C++ unit test
-demo using Google Test deployed to Travis-CI with test coverage deployed to
-Coveralls". I forked this project and added gitlab-ci support.
+The next example is a derivative work; I forked this project and added
+gitlab-ci support. gtest-demo: "C/C++ unit test demo using Google Test
+deployed to Travis-CI with test coverage deployed to Coveralls".
 
 - Upstream project: [gtest-demo](https://github.com/bast/gtest-demo)
 - GTest Demo thanks to [Radovan Bast](https://github.com/bast).

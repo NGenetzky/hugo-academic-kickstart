@@ -176,5 +176,103 @@ cmake --build .
 ctest
 ```
 
+## Snakes on a plane!
+
+Well... not quite, they are contained in a different type of container in the
+cloud. We will build a docker container for a python application that has a
+number of dependencies. The easiest way to build docker containers on
+gitlab-ci it to use [kaniko][], a Google container tool.
+
+The build stage isn't pretty, but it is short. This is based on the docs on
+gitlab, [Building a Docker image with kaniko][gl_using_kaniko].
+
+```yaml
+variables:
+  IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+build:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --cache=true --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $IMAGE_NAME
+```
+
+Here are the items in the script list, for readability:
+
+```bash
+echo "{\"auths\": {\"$CI_REGISTRY\": { \
+      \"username\":\"$CI_REGISTRY_USER\", \
+      \"password\":\"$CI_REGISTRY_PASSWORD\" \
+    }}}" > /kaniko/.docker/config.json
+
+/kaniko/executor --cache=true \
+  --context $CI_PROJECT_DIR \
+  --dockerfile $CI_PROJECT_DIR/Dockerfile \
+  --destination $IMAGE_NAME
+```
+
+Next we will add a `test` stage. This stage will run after the build stage
+and will run unittests inside of this container.
+
+```yaml
+variables:
+  IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+
+test:
+  stage: test
+  image:
+    name: "${IMAGE_NAME}"
+  script:
+    - python -m unittest
+```
+
+{{< figure
+  src="/talk/2019-11-16-gitlab-ci-simple-but-flexible/screenshot-gitlab-git-annex-adapter-pipeline.png"
+  title="Screenshot of git-annex-adapter Pipeline"
+  link="https://gitlab.com/NGenetzky/git-annex-adapter/pipelines/96349628"
+  height="500px"
+>}}
+
+Ironically, I did not introduce this error intentionally; however, it
+provides an opportunity to discuss a few of the benefits of this setup.
+
+1. The status of the jobs is attached to the commits on which they run.
+  1. Status will also appear in merge requests.
+  2. Status will also appear on Github.
+2. The status provides a URL to the pipeline.
+3. The logs for each job in a pipeline are available.
+
+Here is an exert from the logs. I have not investigated the issue farther at
+this time.
+
+```
+23 $ python -m unittest
+24 .[DEBUG] [git_annex_adapter.process.GitAnnexInitRunner] Unknown error:
+25 Traceback (most recent call last):
+...
+36   File "/usr/local/lib/python3.8/subprocess.py", line 1702, in _execute_child
+37     raise child_exception_type(errno_num, err_msg, err_filename)
+38 FileNotFoundError: [Errno 2] No such file or directory: '/tmp/git-annex-adapter-tests-u8jw0who/nonexistent'
+39 E......./usr/local/lib/python3.8/subprocess.py:942: ResourceWarning: subprocess 602 is still running
+40   _warn("subprocess %s is still running" % self.pid,
+41 ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...
+75 Ran 27 tests in 9.022s
+76 FAILED (errors=1)
+80 ERROR: Job failed: exit code 1
+```
+
+{{< figure
+  src="/talk/2019-11-16-gitlab-ci-simple-but-flexible/screenshot-github-git-annex-adapter-commits.png"
+  title="Screenshot of git-annex-adapter Commits"
+  link="https://github.com/NGenetzky/git-annex-adapter/commits/0b325bda6f0a421c5e86ada6f4209516e8d7b3b4"
+  height="500px"
+>}}
+
+
 [shellcheck]: https://github.com/koalaman/shellcheck
 [dockcross]: https://github.com/dockcross/dockcross
+[kaniko]: https://github.com/GoogleContainerTools/kaniko
+[gl_using_kaniko]: https://docs.gitlab.com/ee/ci/docker/using_kaniko.html

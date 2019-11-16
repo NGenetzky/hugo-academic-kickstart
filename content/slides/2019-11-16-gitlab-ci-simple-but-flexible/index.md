@@ -31,6 +31,8 @@ hope!
 - Don't RM RF, Shellcheck that sh library
 - Using docker buildpack to build microcontroller firmware
 - Using Google Test Framework (GTest) to test C or C++
+- Snakes on a plane!
+- Gitlab pricing
 
 ---
 
@@ -284,7 +286,45 @@ this time.
 80 ERROR: Job failed: exit code 1
 ```
 
+---
+
+{{< figure
+  src="/talk/2019-11-16-gitlab-ci-simple-but-flexible/screenshot-github-git-annex-adapter-commits.png"
+  title="Screenshot of git-annex-adapter Commits"
+  link="https://github.com/NGenetzky/git-annex-adapter/commits/0b325bda6f0a421c5e86ada6f4209516e8d7b3b4"
+  height="500px"
+>}}
+
+---
+
+## Gitlab pricing
+
+---
+
+Commitment to open source, public projects:
+
+> As part of GitLab’s commitment to open source, Gold project features are
+available for free to public projects on GitLab.com.
+
+- That means 50,000 CI pipeline minutes per month on Gitlab's shared runners"!
+- The gold tier typically costs $99 per user per month!
+
+---
+
+Gitlab Pricing for closed source or private projects:
+
+- For a limited time there is free usage of CI/CD for GitHub and other
+external repos, even if they are private.
+- [pricing][]
+- [ci-cd-github-extended-again][ci-cd-github-extended-again] until Mar. 22 2020
+- [ci-cd-github][]
+- [ci-cd-external][]
+
 [shellcheck]: https://github.com/koalaman/shellcheck
 [dockcross]: https://github.com/dockcross/dockcross
 [kaniko]: https://github.com/GoogleContainerTools/kaniko
 [gl_using_kaniko]: https://docs.gitlab.com/ee/ci/docker/using_kaniko.html
+[ci-cd-github-extended-again]: https://about.gitlab.com/blog/2019/09/09/ci-cd-github-extended-again/
+[ci-cd-github]: https://about.gitlab.com/solutions/github/
+[ci-cd-external]: https://docs.gitlab.com/ee/ci/ci_cd_for_external_repos/
+[pricing]: https://about.gitlab.com/pricing/

@@ -2,8 +2,7 @@
 title = "2018-05 Yocto"
 date = 2018-05-19T10:00:00
 draft = false
-time_start = 2018-05-19T10:00:00
-time_end = 2018-05-19T12:00:00
+date_end = 2018-05-19T12:00:00
 authors = [ "Nathan Genetzky" ]
 abstract = "This talk is divided into two parts.\n- Yocto Concepts and Quick Start: This should familiarize with how you can start using Yocto.\n- Baking some Yocto Recipes: Using bitbake to build software packages."
 #abstract_short = ""

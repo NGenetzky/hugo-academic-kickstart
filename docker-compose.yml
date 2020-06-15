@@ -15,7 +15,6 @@ hugo:
     - HUGO_THEME=academic
     # - HUGO_REFRESH_TIME=3600
     # - HUGO_DESTINATION="/output"
-  restart: always
   ports:
     - "1313:1313"
 

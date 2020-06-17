@@ -41,11 +41,13 @@ Nathan will talk about Datalad and Git Annex to members of [PenguinsUnbound][].
 
 ### Goal
 
-TODO
+- Provide a high level introduction of what git-annex is.
+- Compare and contrast the different ways git-annex can be used.
+- Convince 25% of audience try using git-annex
 
 ### From the Author
 
-Introduction to git-annex by the author, [Joey Hess][], from the [git-annex][].
+Introduction to [git-annex][] by the author, [Joey Hess][].
 
 > git-annex allows managing files with git, without checking the file
 contents into git. While that may seem paradoxical, it is useful when dealing
@@ -55,6 +57,16 @@ limitations in memory, time, or disk space.
 > git-annex is designed for git users who love the command line. For everyone
 else, the git-annex assistant turns git-annex into an easy to use folder
 synchroniser.
+
+### A La Carte
+
+git-annex is primarily known for "managing files with git without checking
+the file contents into git". If this particular capability is not desired it
+would still be possible to benefit from git-annex or Datalad.
+
+- Datalad is able to be used on git repositories that contain no "annex"
+- Many of the auto commit/sync features of git-annex can be used even if the
+files are just checked into git.
 
 ## git-annex quick start
 
@@ -69,7 +81,7 @@ synchroniser.
 - https://github.com/trallard/ReproduciblePython
 - https://github.com/jupyterlab/jupyterlab-demo/blob/master/binder/postBuild
 
-### Walkthrough
+### Walk-through
 
 - https://git-annex.branchable.com/walkthrough/
 - https://git-annex.branchable.com/tips/centralized_git_repository_tutorial/
@@ -77,15 +89,54 @@ synchroniser.
 ## git-annex can be used at many different levels
 
 - https://git-annex.branchable.com/workflow/
-- Completely automated with git-annex webapp and assistant
-- Very manual with direct control on command line via [git][] and [git-annex][] subcommands
+- Completely automated with git-annex web-app and assistant
+- Very manual with direct control on command line via [git][] and [git-annex][] sub-commands
+
+## git-annex configuration
+
+### git config vs git annex config
+
+- Configuration for git-annex will feel natural for those familiar with
+configuration for git.
+- git-annex can be configured with [git config][] (and the associated
+configuration files).
+- [git annex config][] has the same syntax as [git config][], but stores
+configuration stored within the git repository itself (in the `git-annex`
+branch).
+- [git config][] overrides configuration set via [git annex config][].
+
+### gitignore
+
+- Most git user's should be relatively familiar the purpose of this file.
+- Consider using existing templates (such as with [gitignore.io][]).
+- Consider using [gitignore whitelist][] with git-annex repositories.
+
+The following snippet shows the general format for a [gitignore whitelist][]:
+
+```shell
+# Ignore everything
+*
+# But descend into directories
+!*/
+# Recursively allow files under subtree
+!/subtree/**
+```
+
+### gitattributes
+
+- Fewer projects utilize [gitattributes][], but many **should** be.
+- Consider using existing templates (such as from [gh_gitattributes][]).
+
+The following snippet shows trivial usage for two common file types in C.
+
+```shell
+# C Source Code
+*.c     text diff=c
+# Compiled Dynamic libraries (binary is a macro for -text -diff)
+*.so    binary
+```
 
 ## git-annex handles large files and metadata
-
-### configuration
-
-- https://git-annex.branchable.com/git-annex-config/
-- https://git-annex.branchable.com/tips/local_caching_of_annexed_files/
 
 ### Configure which files go into annex
 
@@ -109,10 +160,6 @@ synchroniser.
 - Can be used with files in "annex" or **not** those in "git"
 - https://git-annex.branchable.com/metadata/
 - https://git-annex.branchable.com/tips/automatically_adding_metadata/
-
-### misc
-
-- https://git-annex.branchable.com/tips/powerful_file_matching/
 
 ## git-annex assistant handles automatic git operations
 
@@ -186,17 +233,22 @@ repository, and decides which information to keep.
 
 ## Conclusion
 
+### Extra Links
+
+- [local_caching_of_annexed_files](https://git-annex.branchable.com/tips/local_caching_of_annexed_files/)
+- [powerful_file_matching](https://git-annex.branchable.com/tips/powerful_file_matching/)
+- [ReproduciblePython datalad ipynb][]
+
 ### References
 
 - [DataLad super-dataset][]
 - [Joey Hess][]
-- [PenguinsUnbound][]
-- [ReproduciblePython datalad ipynb][]
 - [downloads.kitenet.net][]
 - [git-annex][]
 - [git][]
 - [publicrepos][]
 - [vsc-home][]
+- [Effective .gitignore whitelisting patterns][gitignore whitelist] 4 March 2015 By Jason Stitt
 
 [DataLad super-dataset]: http://datasets.datalad.org/
 [Datalad YODA]: http://handbook.datalad.org/en/latest/basics/101-127-yoda.html
@@ -206,7 +258,14 @@ repository, and decides which information to keep.
 [albumin]: https://github.com/alpernebbi/albumin
 [downloads.kitenet.net]: https://downloads.kitenet.net/
 [gin.g-node.org]: https://gin.g-node.org/
+[git annex config]: https://git-annex.branchable.com/git-annex-config/
+[git config]: https://git-scm.com/docs/git-config
 [git-annex]: https://git-annex.branchable.com/
 [git]: https://git-scm.com/
+[gitattributes]: https://git-scm.com/docs/gitattributes
+[gitignore]: https://git-scm.com/docs/gitignore
+[gitignore whitelist]: https://jasonstitt.com/gitignore-whitelisting-patterns
+[gitignore.io]: https://gitignore.io
 [publicrepos]: https://git-annex.branchable.com/publicrepos/
 [vsc-home]: https://lists.madduck.net/listinfo/vcs-home
+[gh_gitattributes]: https://github.com/alexkaratarakis/gitattributes

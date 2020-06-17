@@ -151,9 +151,41 @@ The following snippet shows trivial usage for two common file types in C.
 
 ### backends
 
-- How to choose
-- https://git-annex.branchable.com/backends/
-- https://git-annex.branchable.com/bugs/Wrong_backend_extension_in_files_with_multiple_dots/
+Simple Recommendation: Default to MD5E
+
+- [datalad][] defaults to MD5E backend
+- MD5E backend provides content integrity with lowest computation cost.
+- file extension included in "hash key" avoids subtle issues
+- Use "SHA256E" or "SHA512E" to improve security at the cost of performance.
+
+How to choose which [backend][git_annex_backend]?
+
+1. Will the same file contents possibly have multiple different file extensions?
+2. Do programs rely on the file extension of file (not the symlink to file)?
+3. How important is Security vs Performance?
+
+### backends - file ext in hash
+
+- File extension in key hash can avoid subtle issues but also introduce others
+- Use the backend version that ignores the extension in the key hash to improve de-duplication but exposes subtle issues in some cases.
+- See [this bug report][git_annex_fileext_in_key] for more information.
+
+The following steps  demonstrate how unique "hash
+keys" are created by SHA256E for 4 files with identical contents:
+
+```
+$ touch a a.b a.b.c a.b.c.d
+$ git-annex add .
+add a ok
+add a.b ok
+add a.b.c ok
+add a.b.c.d ok
+$ git-annex lookupkey *
+SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.b
+SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.b.c
+SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.c.d
+```
 
 ### Metadata
 
@@ -256,16 +288,19 @@ repository, and decides which information to keep.
 [PenguinsUnbound]: /tags/penguins-unbound/
 [ReproduciblePython datalad ipynb]: https://github.com/trallard/ReproduciblePython/blob/46c70d06ba6044a44e231fb76009078b3c4c43e0/Datalad.ipynb
 [albumin]: https://github.com/alpernebbi/albumin
+[datalad]: https://www.datalad.org/
 [downloads.kitenet.net]: https://downloads.kitenet.net/
+[gh_gitattributes]: https://github.com/alexkaratarakis/gitattributes
 [gin.g-node.org]: https://gin.g-node.org/
 [git annex config]: https://git-annex.branchable.com/git-annex-config/
 [git config]: https://git-scm.com/docs/git-config
 [git-annex]: https://git-annex.branchable.com/
 [git]: https://git-scm.com/
+[git_annex_backend]: https://git-annex.branchable.com/backends/
+[git_annex_fileext_in_key]: https://git-annex.branchable.com/bugs/Wrong_backend_extension_in_files_with_multiple_dots/
 [gitattributes]: https://git-scm.com/docs/gitattributes
-[gitignore]: https://git-scm.com/docs/gitignore
 [gitignore whitelist]: https://jasonstitt.com/gitignore-whitelisting-patterns
 [gitignore.io]: https://gitignore.io
+[gitignore]: https://git-scm.com/docs/gitignore
 [publicrepos]: https://git-annex.branchable.com/publicrepos/
 [vsc-home]: https://lists.madduck.net/listinfo/vcs-home
-[gh_gitattributes]: https://github.com/alexkaratarakis/gitattributes

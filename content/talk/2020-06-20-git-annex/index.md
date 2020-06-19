@@ -241,8 +241,10 @@ via HTTP
 
 ## Sharing files from git-annex with Special Remotes
 
-[Special Remotes][git_annex_special_remotes] allows files to be annexed in a
+- [Special Remotes][git_annex_special_remotes] allows files to be annexed in a
 large variety of ways.
+- Almost all special remotes support
+[encryption](https://git-annex.branchable.com/encryption/).
 
 ### Special Remotes - Cloud services
 
@@ -256,6 +258,7 @@ File-system based remotes are great for local servers or USB drives
 
 - [directory][gasr_directory] for local use
 - [rsync][gasr_rsync] for use over a network
+- [adb][gasr_adb] for use with android device
 - The directory and rsync special remotes intentionally use the same layout.
 So the same directory could be set up as both types of special remotes.
 ([comment by Joey H][gasr_directory_comment])
@@ -325,6 +328,11 @@ and fulfils all specifications regarding whitespaces etc. This is ensured by
 an excessive test suite. Extensions to the protocol are normally added within
 hours after they've been published.
 
+### Firefox plugin FlashGot - download manager
+
+- [Using Git-annex as a web browsing assistant](https://git-annex.branchable.com/tips/Using_Git-annex_as_a_web_browsing_assistant/)
+- [FlashGot](https://flashgot.net/)
+
 ## Conclusion
 
 ### References
@@ -364,6 +372,7 @@ Others
 [datalad]: https://www.datalad.org/
 [downloads.kitenet.net]: https://downloads.kitenet.net/
 [gasr_S3]: http://git-annex.branchable.com/special_remotes/S3
+[gasr_adb]: http://git-annex.branchable.com/special_remotes/adb
 [gasr_directory]: http://git-annex.branchable.com/special_remotes/directory
 [gasr_directory_comment]: http://git-annex.branchable.com/special_remotes/directory/#comment-93de27e6987c72bc222dbdae2a076f79
 [gasr_external]: http://git-annex.branchable.com/special_remotes/directory

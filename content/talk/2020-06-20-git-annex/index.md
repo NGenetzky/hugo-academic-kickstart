@@ -143,37 +143,33 @@ The following snippet shows trivial usage for two common file types in C.
 - https://git-annex.branchable.com/git-annex-matching-expression/
 - https://git-annex.branchable.com/tips/largefiles/
 
-### Configure which files should move and where
-
-- https://git-annex.branchable.com/preferred_content/
-- https://git-annex.branchable.com/preferred_content/standard_groups/
-- https://git-annex.branchable.com/location_tracking/
-
-### backends
+### backends - simple
 
 Simple Recommendation: Default to MD5E
 
 - [datalad][] defaults to MD5E backend
 - MD5E backend provides content integrity with lowest computation cost.
-- file extension included in "hash key" avoids subtle issues
+- MD5E has file extension included in "hash key" avoids subtle issues
+
+How important is Security vs Performance?
+
 - Use "SHA256E" or "SHA512E" to improve security at the cost of performance.
-
-How to choose which [backend][git_annex_backend]?
-
-1. Will the same file contents possibly have multiple different file extensions?
-2. Do programs rely on the file extension of file (not the symlink to file)?
-3. How important is Security vs Performance?
 
 ### backends - file ext in hash
 
-- File extension in key hash can avoid subtle issues but also introduce others
-- Use the backend version that ignores the extension in the key hash to improve de-duplication but exposes subtle issues in some cases.
+How to choose whether to use [backend][git_annex_backend] that includes file ext?
+
+1. Will the same file contents possibly have multiple different file extensions?
+2. Do programs rely on the file extension of file (not the symlink to file)?
+
+- File ext. in key causes multiple copies of identical files with different ext.
+- File ext. in key results in file at end of symlink having that extension as well.
 - See [this bug report][git_annex_fileext_in_key] for more information.
 
 The following steps  demonstrate how unique "hash
 keys" are created by SHA256E for 4 files with identical contents:
 
-```
+```shell
 $ touch a a.b a.b.c a.b.c.d
 $ git-annex add .
 add a ok
@@ -189,15 +185,29 @@ SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.c.d
 
 ### Metadata
 
-- Can be used with files in "annex" or **not** those in "git"
+- Can only be used with files in "annex", **not** those in "git".
 - https://git-annex.branchable.com/metadata/
 - https://git-annex.branchable.com/tips/automatically_adding_metadata/
 
-## git-annex assistant handles automatic git operations
+### Using Metadata
+
+- [metadata driven views][git_annex_metadata_driven_views]
+- [powerful file matching][git_annex_powerful_file_matching]
+- [views demo video](https://git-annex.branchable.com/videos/git-annex_views_demo/)
+
+## git-annex handles git operations and file transfers
+
+### git-annex assistant reduces learning curve
 
 - Can be used with files in "annex" or in "git"
 - https://git-annex.branchable.com/assistant/
 - https://git-annex.branchable.com/git-annex-webapp/
+
+### Configure which files should move and where
+
+- https://git-annex.branchable.com/preferred_content/
+- https://git-annex.branchable.com/preferred_content/standard_groups/
+- https://git-annex.branchable.com/location_tracking/
 
 ## Datalad handles publication and reproduction at scale
 
@@ -239,13 +249,21 @@ SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.c.d
 
 ### git-annex-adapter
 
-- https://github.com/alpernebbi/git-annex-adapter
+[git-annex-adapter] lets you interact with git-annex from within Python.
+
+> Necessary commands are executed using subprocess and use their batch
+versions whenever possible.
 
 ### recastex
 
-- Announcing recastex - (re)podcast from your annex
-- https://git-annex.branchable.com/tips/Announcing_recastex_-___40__re__41__podcast__from_your_annex/
-- https://github.com/stewart123579/recastex
+[recastex][] can take files and podcasts captured by git-annex and re-podcast them.
+
+> With recastex (RECAST annEX) you can now re-podcast the shows you have
+locally (to, say, your phone). This reduces network usage (brilliant for
+traveling when network costs are expensive) and improves privacy.
+
+> Recasing isn't limited to podcasts. recastex casts all locally available
+media.
 
 ### albumin
 
@@ -265,22 +283,32 @@ repository, and decides which information to keep.
 
 ## Conclusion
 
-### Extra Links
-
-- [local_caching_of_annexed_files](https://git-annex.branchable.com/tips/local_caching_of_annexed_files/)
-- [powerful_file_matching](https://git-annex.branchable.com/tips/powerful_file_matching/)
-- [ReproduciblePython datalad ipynb][]
-
 ### References
 
-- [DataLad super-dataset][]
-- [Joey Hess][]
+From [git-annex][] branchable
+
+- [local_caching_of_annexed_files](https://git-annex.branchable.com/tips/local_caching_of_annexed_files/)
+
+[public git-annex repositories][publicrepos]
+
 - [downloads.kitenet.net][]
-- [git-annex][]
-- [git][]
-- [publicrepos][]
-- [vsc-home][]
+- [DataLad super-dataset][]
+
+From [git][] documentation
+
+- [git config][]
+- [gitignore][]
+- [gitattributes][]
+
+Specific Works
+
+- [ReproduciblePython datalad ipynb][]
 - [Effective .gitignore whitelisting patterns][gitignore whitelist] 4 March 2015 By Jason Stitt
+
+Others
+
+- [Joey Hess][]
+- [vsc-home][]
 
 [DataLad super-dataset]: http://datasets.datalad.org/
 [Datalad YODA]: http://handbook.datalad.org/en/latest/basics/101-127-yoda.html
@@ -294,13 +322,17 @@ repository, and decides which information to keep.
 [gin.g-node.org]: https://gin.g-node.org/
 [git annex config]: https://git-annex.branchable.com/git-annex-config/
 [git config]: https://git-scm.com/docs/git-config
+[git-annex-adapter]: https://github.com/alpernebbi/git-annex-adapter
 [git-annex]: https://git-annex.branchable.com/
 [git]: https://git-scm.com/
 [git_annex_backend]: https://git-annex.branchable.com/backends/
 [git_annex_fileext_in_key]: https://git-annex.branchable.com/bugs/Wrong_backend_extension_in_files_with_multiple_dots/
+[git_annex_metadata_driven_views]: https://git-annex.branchable.com/tips/metadata_driven_views/
+[git_annex_powerful_file_matching]: https://git-annex.branchable.com/tips/powerful_file_matching/
 [gitattributes]: https://git-scm.com/docs/gitattributes
 [gitignore whitelist]: https://jasonstitt.com/gitignore-whitelisting-patterns
 [gitignore.io]: https://gitignore.io
 [gitignore]: https://git-scm.com/docs/gitignore
 [publicrepos]: https://git-annex.branchable.com/publicrepos/
+[recastex]: https://github.com/stewart123579/recastex
 [vsc-home]: https://lists.madduck.net/listinfo/vcs-home

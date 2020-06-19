@@ -86,7 +86,7 @@ files are just checked into git.
 - https://git-annex.branchable.com/walkthrough/
 - https://git-annex.branchable.com/tips/centralized_git_repository_tutorial/
 
-## git-annex can be used at many different levels
+## git-annex can be used in many different ways
 
 - https://git-annex.branchable.com/workflow/
 - Completely automated with git-annex web-app and assistant
@@ -197,7 +197,7 @@ SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.c.d
 
 ## git-annex handles git operations and file transfers
 
-### git-annex assistant reduces learning curve
+### git-annex assistant reduces learning curve with a GUI
 
 - Can be used with files in "annex" or in "git"
 - https://git-annex.branchable.com/assistant/
@@ -218,18 +218,20 @@ SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.c.d
 - https://www.datalad.org/features.html
 - [Datalad YODA][]
 
-## Sharing files from git-annex
+## Sharing files from git-annex with git
 
-- https://git-annex.branchable.com/tips/centralized_git_repository_tutorial/
+### via git on computer in your network
 
-### via SSH on your server or computer
+via SSH
 
-- https://git-annex.branchable.com/tips/remote_webapp_setup/
-- https://git-annex.branchable.com/forum/Restricting_git-annex-shell_to_a_specific_repository/
+- [simple git server][git_annex_on_your_own_server]
+- [webapp setup][git_annex_remote_webapp_setup]
+- [Restricting git-annex-shell to a specific repository](https://git-annex.branchable.com/forum/Restricting_git-annex-shell_to_a_specific_repository/)
 
-### via HTTP on your server or computer
+via HTTP
 
-- TODO
+- A web server configured to host a git repository can also be used
+- http git remote is read-only
 
 ### via Gogs, a git-annex compatible git server
 
@@ -237,35 +239,66 @@ SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.c.d
 - Gogs on an embedded device
 - Gogs provided by [gin.g-node.org][]
 
-### Special Remotes
+## Sharing files from git-annex with Special Remotes
+
+[Special Remotes][git_annex_special_remotes] allows files to be annexed in a
+large variety of ways.
+
+### Special Remotes - Cloud services
+
+- [git-lfs][gasr_gitlfs] (also see [storing_data_in_git-lfs][]).
+- [rclone][gasr_rclone] has support for a lot of services.
+- [S3][gasr_S3] interface is broadly implemented.
+
+### Special Remotes - local usage
+
+File-system based remotes are great for local servers or USB drives
+
+- [directory][gasr_directory] for local use
+- [rsync][gasr_rsync] for use over a network
+- The directory and rsync special remotes intentionally use the same layout.
+So the same directory could be set up as both types of special remotes.
+([comment by Joey H][gasr_directory_comment])
+- The main reason to use this rather than a bare git repo is that it supports
+encryption. ([comment by Joey H][gasr_directory_comment])
+
+### Special Remotes - Bring your Own
+
+Powerful [external special remotes][gasr_external]
+
+- Write in Python with [AnnexRemote][gh_annex_remote].
+- Write in shell script based on [example.sh][gasr_external_example].
+
+Simple [hook][gasr_hook] commands
+
+- Very simple to write, but less robust than external special remotes
 
 ## Other tools that work with git-annex
 
 ### git-annex metadata GUI
 
-- https://git-annex.branchable.com/tips/a_gui_for_metadata_operations/
-- https://github.com/alpernebbi/git-annex-metadata-gui
-- https://github.com/alpernebbi/git-annex-adapter
+[git-annex-metadata-gui][] provides a graphical interface to the metadata
+functionality of git-annex.
 
-### git-annex-adapter
+### git-annex-adapter - use from python
 
 [git-annex-adapter] lets you interact with git-annex from within Python.
 
 > Necessary commands are executed using subprocess and use their batch
 versions whenever possible.
 
-### recastex
+### recastex - manage podcasts
 
 [recastex][] can take files and podcasts captured by git-annex and re-podcast them.
 
 > With recastex (RECAST annEX) you can now re-podcast the shows you have
 locally (to, say, your phone). This reduces network usage (brilliant for
 traveling when network costs are expensive) and improves privacy.
-
-> Recasing isn't limited to podcasts. recastex casts all locally available
+>
+> Recasting isn't limited to podcasts. recastex casts all locally available
 media.
 
-### albumin
+### albumin - manage photos
 
 [albumin][] is a script to semi-automatically manage a photograph collection.
 
@@ -281,12 +314,24 @@ repository, and decides which information to keep.
 - http://www.gnu.org/software/libextractor/
 - https://exiftool.org/
 
+### AnnexRemote
+
+[AnnexRemote][gh_annex_remote] is a helper module to easily develop special
+remotes for git annex.
+
+> AnnexRemote handles all the protocol stuff for you, so you can focus on the
+remote itself. It implements the complete external special remote protocol
+and fulfils all specifications regarding whitespaces etc. This is ensured by
+an excessive test suite. Extensions to the protocol are normally added within
+hours after they've been published.
+
 ## Conclusion
 
 ### References
 
 From [git-annex][] branchable
 
+- [centralized_git_repository_tutorial](https://git-annex.branchable.com/tips/centralized_git_repository_tutorial/)
 - [local_caching_of_annexed_files](https://git-annex.branchable.com/tips/local_caching_of_annexed_files/)
 
 [public git-annex repositories][publicrepos]
@@ -318,21 +363,36 @@ Others
 [albumin]: https://github.com/alpernebbi/albumin
 [datalad]: https://www.datalad.org/
 [downloads.kitenet.net]: https://downloads.kitenet.net/
+[gasr_S3]: http://git-annex.branchable.com/special_remotes/S3
+[gasr_directory]: http://git-annex.branchable.com/special_remotes/directory
+[gasr_directory_comment]: http://git-annex.branchable.com/special_remotes/directory/#comment-93de27e6987c72bc222dbdae2a076f79
+[gasr_external]: http://git-annex.branchable.com/special_remotes/directory
+[gasr_external_example]: https://git-annex.branchable.com/special_remotes/external/example.sh/
+[gasr_gitlfs]: http://git-annex.branchable.com/special_remotes/git-lfs
+[gasr_hook]: http://git-annex.branchable.com/special_remotes/hook
+[gasr_rclone]: http://git-annex.branchable.com/special_remotes/rclone
+[gasr_rsync]: http://git-annex.branchable.com/special_remotes/rsync
+[gh_annex_remote]: https://github.com/Lykos153/AnnexRemote
 [gh_gitattributes]: https://github.com/alexkaratarakis/gitattributes
 [gin.g-node.org]: https://gin.g-node.org/
 [git annex config]: https://git-annex.branchable.com/git-annex-config/
 [git config]: https://git-scm.com/docs/git-config
 [git-annex-adapter]: https://github.com/alpernebbi/git-annex-adapter
+[git-annex-metadata-gui]: https://github.com/alpernebbi/git-annex-metadata-gui
 [git-annex]: https://git-annex.branchable.com/
 [git]: https://git-scm.com/
 [git_annex_backend]: https://git-annex.branchable.com/backends/
 [git_annex_fileext_in_key]: https://git-annex.branchable.com/bugs/Wrong_backend_extension_in_files_with_multiple_dots/
 [git_annex_metadata_driven_views]: https://git-annex.branchable.com/tips/metadata_driven_views/
+[git_annex_on_your_own_server]: https://git-annex.branchable.com/tips/centralized_git_repository_tutorial/on_your_own_server/
 [git_annex_powerful_file_matching]: https://git-annex.branchable.com/tips/powerful_file_matching/
+[git_annex_remote_webapp_setup]: https://git-annex.branchable.com/tips/remote_webapp_setup/
+[git_annex_special_remotes]: https://git-annex.branchable.com/special_remotes/
 [gitattributes]: https://git-scm.com/docs/gitattributes
 [gitignore whitelist]: https://jasonstitt.com/gitignore-whitelisting-patterns
 [gitignore.io]: https://gitignore.io
 [gitignore]: https://git-scm.com/docs/gitignore
 [publicrepos]: https://git-annex.branchable.com/publicrepos/
 [recastex]: https://github.com/stewart123579/recastex
+[storing_data_in_git-lfs]: https://git-annex.branchable.com/tips/storing_data_in_git-lfs/
 [vsc-home]: https://lists.madduck.net/listinfo/vcs-home

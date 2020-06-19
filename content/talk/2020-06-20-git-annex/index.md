@@ -232,12 +232,16 @@ via HTTP
 
 - A web server configured to host a git repository can also be used
 - http git remote is read-only
+- [setup a public repository on a web site][git_annex_setup_a_public_repository_on_a_web_site]
 
 ### via Gogs, a git-annex compatible git server
 
-- Gogs on your server or computer
-- Gogs on an embedded device
+- Gogs on your server or computer [wiki][gin_wiki_in_house] and [gin@home on github][gh_gin_at_home].
 - Gogs provided by [gin.g-node.org][]
+- Gogs on an embedded device with [Balena][]
+  - My fork of has a minimal example (branch:
+  [balena/ginathome][gh_gin_balena_at_home],
+  [commit](https://github.com/NGenetzky/gogs/commit/55732c46e525f4c13c437cb63be785d7cb453988))
 
 ## Sharing files from git-annex with Special Remotes
 
@@ -363,6 +367,7 @@ Others
 - [Joey Hess][]
 - [vsc-home][]
 
+[Balena]: https://www.balena.io/
 [DataLad super-dataset]: http://datasets.datalad.org/
 [Datalad YODA]: http://handbook.datalad.org/en/latest/basics/101-127-yoda.html
 [Joey Hess]: https://joeyh.name/
@@ -382,8 +387,11 @@ Others
 [gasr_rclone]: http://git-annex.branchable.com/special_remotes/rclone
 [gasr_rsync]: http://git-annex.branchable.com/special_remotes/rsync
 [gh_annex_remote]: https://github.com/Lykos153/AnnexRemote
+[gh_gin_at_home]: https://github.com/G-Node/gogs/tree/gin%40home
+[gh_gin_balena_at_home]: https://github.com/NGenetzky/gogs/tree/balena/ginathome
 [gh_gitattributes]: https://github.com/alexkaratarakis/gitattributes
 [gin.g-node.org]: https://gin.g-node.org/
+[gin_in_house]: https://gin.g-node.org/G-Node/Info/wiki/In+House
 [git annex config]: https://git-annex.branchable.com/git-annex-config/
 [git config]: https://git-scm.com/docs/git-config
 [git-annex-adapter]: https://github.com/alpernebbi/git-annex-adapter
@@ -396,6 +404,7 @@ Others
 [git_annex_on_your_own_server]: https://git-annex.branchable.com/tips/centralized_git_repository_tutorial/on_your_own_server/
 [git_annex_powerful_file_matching]: https://git-annex.branchable.com/tips/powerful_file_matching/
 [git_annex_remote_webapp_setup]: https://git-annex.branchable.com/tips/remote_webapp_setup/
+[git_annex_setup_a_public_repository_on_a_web_site]: https://git-annex.branchable.com/tips/setup_a_public_repository_on_a_web_site/
 [git_annex_special_remotes]: https://git-annex.branchable.com/special_remotes/
 [gitattributes]: https://git-scm.com/docs/gitattributes
 [gitignore whitelist]: https://jasonstitt.com/gitignore-whitelisting-patterns

@@ -10,3 +10,8 @@
   HUGO_VERSION = "0.57.2"
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "true"
+
+# TODO: '.ruby-version' use ruby version 2.6.2
+# Using custom ruby version 2.3.6, this will slow down the build.
+# To ensure fast builds, set the RUBY_VERSION environment variable, or .ruby-version file, to an included ruby version.
+# Included versions: 2.6.2

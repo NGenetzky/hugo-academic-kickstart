@@ -13,7 +13,14 @@
     {{/* Each `<section>` defines a new slide. */}}
     {{/* Only begin new slide `<section>` if not already added by custom `slide` shortcode. */}}
     {{ if not (in . "data-noprocess") }}
-    <section>
+
+    {{/* https://docdock.netlify.app/create-page/page-slide/#slide-delimiters */}}
+    {{/* view-source:https://docdock.netlify.app/create-page/myslide/ */}}
+    <section data-markdown
+            data-separator="^---"
+            data-separator-vertical="^___"
+            data-separator-notes="^Note:"
+            >
     {{ end }}
       {{ . | safeHTML }}
     </section>

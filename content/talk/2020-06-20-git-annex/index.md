@@ -44,6 +44,15 @@ Nathan will talk about Datalad and Git Annex to members of [PenguinsUnbound][].
 - Provide a high level introduction of what git-annex is.
 - Compare and contrast the different ways git-annex can be used.
 - Convince 25% of audience try using git-annex
+- Provide a plethora of resources for future investigation
+
+### Background on the Author
+
+[Joey Hess][] really likes git.
+
+- [etckeeper][] is a collection of tools to keep track of /etc/ in Git.
+- [Ikiwiki][] is a wiki compiler that stores pages and history in Git.
+- [git-annex][] manages files with git, without checking contents into git.
 
 ### From the Author
 
@@ -420,12 +429,14 @@ Others
 [Balena]: https://www.balena.io/
 [DataLad super-dataset]: http://datasets.datalad.org/
 [Datalad YODA]: http://handbook.datalad.org/en/latest/basics/101-127-yoda.html
+[Ikiwiki]: https://ikiwiki.info/
 [Joey Hess]: https://joeyh.name/
 [PenguinsUnbound]: /tags/penguins-unbound/
 [ReproduciblePython datalad ipynb]: https://github.com/trallard/ReproduciblePython/blob/46c70d06ba6044a44e231fb76009078b3c4c43e0/Datalad.ipynb
 [albumin]: https://github.com/alpernebbi/albumin
 [datalad]: https://www.datalad.org/
 [downloads.kitenet.net]: https://downloads.kitenet.net/
+[etckeeper]: https://etckeeper.branchable.com/
 [gasr_S3]: http://git-annex.branchable.com/special_remotes/S3
 [gasr_adb]: http://git-annex.branchable.com/special_remotes/adb
 [gasr_directory]: http://git-annex.branchable.com/special_remotes/directory

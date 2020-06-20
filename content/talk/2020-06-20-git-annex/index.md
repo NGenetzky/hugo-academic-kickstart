@@ -153,8 +153,8 @@ The following snippet shows trivial usage for two common file types in C.
 
 ### Configure which files go into annex
 
-- https://git-annex.branchable.com/git-annex-matching-expression/
-- https://git-annex.branchable.com/tips/largefiles/
+- [git-annex-matching-expression](https://git-annex.branchable.com/git-annex-matching-expression/)
+- [largefiles](https://git-annex.branchable.com/tips/largefiles/)
 
 ### backends - simple
 
@@ -284,7 +284,7 @@ via HTTP
 
 ### via Gogs, a git-annex compatible git server
 
-- Gogs on your server or computer [wiki][gin_wiki_in_house] and [gin@home on github][gh_gin_at_home].
+- Gogs on your server or computer [wiki][gin_in_house] and [gin@home on github][gh_gin_at_home].
 - Gogs provided by [gin.g-node.org][]
 - Gogs on an embedded device with [Balena][]
   - My fork of has a minimal example (branch:

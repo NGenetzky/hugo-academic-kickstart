@@ -84,7 +84,6 @@ files are just checked into git.
 ### Walk-through
 
 - https://git-annex.branchable.com/walkthrough/
-- https://git-annex.branchable.com/tips/centralized_git_repository_tutorial/
 
 ## git-annex can be used in many different ways
 
@@ -187,27 +186,71 @@ SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.c.d
 
 - Can only be used with files in "annex", **not** those in "git".
 - https://git-annex.branchable.com/metadata/
-- https://git-annex.branchable.com/tips/automatically_adding_metadata/
+- [automatically adding metadata][git_annex_automatically_adding_metadata]
 
-### Using Metadata
+Using metadata with views:
 
 - [metadata driven views][git_annex_metadata_driven_views]
-- [powerful file matching][git_annex_powerful_file_matching]
 - [views demo video](https://git-annex.branchable.com/videos/git-annex_views_demo/)
 
-## git-annex handles git operations and file transfers
+### Find annex files
 
-### git-annex assistant reduces learning curve with a GUI
+- [powerful file matching][git_annex_powerful_file_matching]
+- [location tracking](https://git-annex.branchable.com/location_tracking/)
+can be utilized with `--in`
+- Use `-(` and `-)` to group expressions
+- Use `--and`, `--or`, and `--not` to alter logic
+
+```shell
+# Find mp3 files in either of two repositories that have less than 3 copies:
+git annex find \
+    --not --exclude '*.mp3' --and \
+    -\( --in usbdrive --or --in archive -\) --and \
+    --not --copies 3
+```
+
+## git-annex automates git operations and file transfers
+
+### git-annex can automate the movement of files
 
 - Can be used with files in "annex" or in "git"
-- https://git-annex.branchable.com/assistant/
-- https://git-annex.branchable.com/git-annex-webapp/
+- git-annex can `--auto` get/drop/copy/move files based on rules
+- git-annex sync choose an action (get/drop/copy/move) based on rules for files
+- [assistant][git_annex_assistant] is a daemon that can automate operations between remotes
+- [webapp][git_annex_webapp] allows everything to be configured via a GUI
 
-### Configure which files should move and where
+### preferred content - Configure which files should move and where
 
-- https://git-annex.branchable.com/preferred_content/
-- https://git-annex.branchable.com/preferred_content/standard_groups/
-- https://git-annex.branchable.com/location_tracking/
+- [preferred_content](https://git-annex.branchable.com/preferred_content/)
+  - [git-annex-preferred-content](https://git-annex.branchable.com/git-annex-preferred-content/)
+  - [standard_groups](https://git-annex.branchable.com/preferred_content/standard_groups/)
+  - content expressions (recommend starting with and tweaking a standard group)
+- get/drop/copy/move can use via `--auto` flag
+
+These commands can be used to help identify what would happen with the next
+`annex sync --content`:
+
+```shell
+annex find --in . --want-drop
+annex find --not --in . --want-get
+```
+
+### preferred content - Practical example
+
+Consider the path of files from a camera to a website in a small company.
+
+Remotes:
+
+- `(A)` camera is "source" of photos
+- `(B)` laptop connected to camera is "client"
+- `(C)` external hard-drive is "archive"
+- `(D)` web server is "public"
+
+Flow of files
+
+- `(A)->(B)`: Always
+- `(B)->(C)`: if file is placed in "archive/" directory
+- `(B)->(D)`: if file is placed in "public/" directory
 
 ## Sharing files from git-annex with git
 
@@ -236,6 +279,7 @@ via HTTP
 
 ## Sharing files from git-annex with Special Remotes
 
+- Can only be used with files in "annex", **not** those in "git".
 - [Special Remotes][git_annex_special_remotes] allows files to be annexed in a
 large variety of ways.
 - Almost all special remotes support
@@ -350,8 +394,7 @@ hours after they've been published.
 
 From [git-annex][] branchable
 
-- [centralized_git_repository_tutorial](https://git-annex.branchable.com/tips/centralized_git_repository_tutorial/)
-- [local_caching_of_annexed_files](https://git-annex.branchable.com/tips/local_caching_of_annexed_files/)
+- [local caching of annexed files][git_annex_local_caching_of_annexed_files]
 
 [public git-annex repositories][publicrepos]
 
@@ -405,14 +448,19 @@ Others
 [git-annex-metadata-gui]: https://github.com/alpernebbi/git-annex-metadata-gui
 [git-annex]: https://git-annex.branchable.com/
 [git]: https://git-scm.com/
+[git_annex_assistant]: https://git-annex.branchable.com/assistant/
+[git_annex_automatically_adding_metadata]: https://git-annex.branchable.com/tips/automatically_adding_metadata/
 [git_annex_backend]: https://git-annex.branchable.com/backends/
 [git_annex_fileext_in_key]: https://git-annex.branchable.com/bugs/Wrong_backend_extension_in_files_with_multiple_dots/
+[git_annex_local_caching_of_annexed_files]: https://git-annex.branchable.com/tips/local_caching_of_annexed_files/
 [git_annex_metadata_driven_views]: https://git-annex.branchable.com/tips/metadata_driven_views/
 [git_annex_on_your_own_server]: https://git-annex.branchable.com/tips/centralized_git_repository_tutorial/on_your_own_server/
 [git_annex_powerful_file_matching]: https://git-annex.branchable.com/tips/powerful_file_matching/
 [git_annex_remote_webapp_setup]: https://git-annex.branchable.com/tips/remote_webapp_setup/
 [git_annex_setup_a_public_repository_on_a_web_site]: https://git-annex.branchable.com/tips/setup_a_public_repository_on_a_web_site/
 [git_annex_special_remotes]: https://git-annex.branchable.com/special_remotes/
+[git_annex_watch]: https://git-annex.branchable.com/git-annex-watch/
+[git_annex_webapp]: https://git-annex.branchable.com/git-annex-webapp/
 [gitattributes]: https://git-scm.com/docs/gitattributes
 [gitignore whitelist]: https://jasonstitt.com/gitignore-whitelisting-patterns
 [gitignore.io]: https://gitignore.io

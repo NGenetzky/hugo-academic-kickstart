@@ -209,15 +209,6 @@ SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.c.d
 - https://git-annex.branchable.com/preferred_content/standard_groups/
 - https://git-annex.branchable.com/location_tracking/
 
-## Datalad handles publication and reproduction at scale
-
-- Can be used with files in "annex" or in "git"
-- [IPython Notebook demonstrating git-annex and datalad][ReproduciblePython datalad ipynb]
-- [DataLad super-dataset][]
-- http://handbook.datalad.org/en/latest/
-- https://www.datalad.org/features.html
-- [Datalad YODA][]
-
 ## Sharing files from git-annex with git
 
 ### via git on computer in your network
@@ -281,6 +272,22 @@ Simple [hook][gasr_hook] commands
 - Very simple to write, but less robust than external special remotes
 
 ## Other tools that work with git-annex
+
+### Datalad handles publication and reproduction at scale
+
+- Can be used with files in "annex" or in "git"
+- [IPython Notebook demonstrating git-annex and datalad][ReproduciblePython datalad ipynb]
+- [DataLad super-dataset][]
+- [handbook for datalad](http://handbook.datalad.org/en/latest/)
+- [datalad features](https://www.datalad.org/features.html)
+- [Datalad YODA][] Best practices for data analyses in a dataset
+
+
+[DataLad vs Git/Git-annex for modular data management](https://www.youtube.com/watch?v=Yrg6DgOcbPE):
+
+> This talks demos how DataLad, utilizing these tools, aids workflows
+involving nested repositories (git submodules), and argues that such
+workflows are highly suitable for data management needs in science.
 
 ### git-annex metadata GUI
 

@@ -46,6 +46,8 @@ Nathan will talk about Datalad and Git Annex to members of [PenguinsUnbound][].
 - Convince 25% of audience try using git-annex
 - Provide a plethora of resources for future investigation
 
+## Introduction to git-annex
+
 ### Background on the Author
 
 [Joey Hess][] really likes git.
@@ -67,7 +69,16 @@ limitations in memory, time, or disk space.
 else, the git-annex assistant turns git-annex into an easy to use folder
 synchroniser.
 
-### A La Carte
+### git-annex quick start
+
+- [install](https://git-annex.branchable.com/install/)
+  - [Android](https://git-annex.branchable.com/Android/)
+  - debian: `apt-get install git-annex`
+- [walkthrough](https://git-annex.branchable.com/walkthrough/)
+
+## git-annex can be used in many different ways
+
+### git-annex without any annexed files
 
 git-annex is primarily known for "managing files with git without checking
 the file contents into git". If this particular capability is not desired it
@@ -77,28 +88,22 @@ would still be possible to benefit from git-annex or Datalad.
 - Many of the auto commit/sync features of git-annex can be used even if the
 files are just checked into git.
 
-## git-annex quick start
+### git-annex can be overwhelmingly automated
 
-### Install
+Generally listed from most automated to least automated. Items higher on the
+list likely include functionality mentioned lower in list. See
+[workflow][git_annex_workflow] for more info.
 
-- https://git-annex.branchable.com/install/
-- https://git-annex.branchable.com/Android/
+1. [git annex webapp][git_annex_webapp]. GUI for creation, configuration and management
+2. [git annex assistant][git_annex_assistant]. Automates `git annex sync` and uses network to keep remotes in sync.
+3. [git annex watch][git_annex_watch]. Automates `git add` and `git commit`.
+4. [git annex sync][git_annex_sync]. Complex `git fetch` and `git merge` operations on request.
 
-### Try online
+### git-annex flexible configuration and manual usage
 
-- TODO: Make a "binder" configuration so readers can easily try things out
-- https://github.com/trallard/ReproduciblePython
-- https://github.com/jupyterlab/jupyterlab-demo/blob/master/binder/postBuild
-
-### Walk-through
-
-- https://git-annex.branchable.com/walkthrough/
-
-## git-annex can be used in many different ways
-
-- https://git-annex.branchable.com/workflow/
-- Completely automated with git-annex web-app and assistant
 - Very manual with direct control on command line via [git][] and [git-annex][] sub-commands
+- most commands can be configured on multiple different levels
+- **Usually** git-annex will stay out of the way if configured correctly
 
 ## git-annex configuration
 
@@ -470,8 +475,10 @@ Others
 [git_annex_remote_webapp_setup]: https://git-annex.branchable.com/tips/remote_webapp_setup/
 [git_annex_setup_a_public_repository_on_a_web_site]: https://git-annex.branchable.com/tips/setup_a_public_repository_on_a_web_site/
 [git_annex_special_remotes]: https://git-annex.branchable.com/special_remotes/
+[git_annex_sync]: https://git-annex.branchable.com/git-annex-sync/
 [git_annex_watch]: https://git-annex.branchable.com/git-annex-watch/
 [git_annex_webapp]: https://git-annex.branchable.com/git-annex-webapp/
+[git_annex_workflow]: https://git-annex.branchable.com/workflow/
 [gitattributes]: https://git-scm.com/docs/gitattributes
 [gitignore whitelist]: https://jasonstitt.com/gitignore-whitelisting-patterns
 [gitignore.io]: https://gitignore.io

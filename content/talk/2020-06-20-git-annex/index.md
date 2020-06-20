@@ -25,10 +25,10 @@ tags:
 - "shell"
 
 links:
-# - name: slides
-#   url: "slides/2020-06-20" # TODO
-#   icon_pack: fas
-#   icon: chalkboard
+- name: slides
+  url: "slides/2020-06-20-git-annex" # TODO
+  icon_pack: fas
+  icon: chalkboard
 - name: git-annex
   url: "https://git-annex.branchable.com/"
 - name: git-annex-adapter

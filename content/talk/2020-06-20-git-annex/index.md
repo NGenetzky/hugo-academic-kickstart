@@ -5,14 +5,13 @@ authors: [ "nathan-genetzky" ]
 event: "Penguins Unbound: June 2020 Meeting"
 event_url: "https://www.meetup.com/PenguinsUnbound/events/268428406/"
 location: "Jitsi"
-# summary: # TODO
-# abstract:# TODO
+summary: "Nathan will talk about Datalad and Git Annex to members of PenguinsUnbound"
+abstract: "Nathan will talk about Datalad and Git Annex to members of PenguinsUnbound"
 date: 2020-06-20T10:00:00
 date_end: 2020-06-20T12:00:00
 publishDate: "2020-06-14"
 
 featured: true
-# draft: true # TODO: Fix local display of drafts.
 
 tags:
 - "bash"
@@ -25,10 +24,10 @@ tags:
 - "shell"
 
 links:
-# - name: slides
-#   url: "slides/2020-06-20" # TODO
-#   icon_pack: fas
-#   icon: chalkboard
+- name: slides
+  url: "slides/2020-06-20-git-annex"
+  icon_pack: fas
+  icon: chalkboard
 - name: git-annex
   url: "https://git-annex.branchable.com/"
 - name: git-annex-adapter
@@ -153,8 +152,8 @@ The following snippet shows trivial usage for two common file types in C.
 
 ### Configure which files go into annex
 
-- https://git-annex.branchable.com/git-annex-matching-expression/
-- https://git-annex.branchable.com/tips/largefiles/
+- [git-annex-matching-expression](https://git-annex.branchable.com/git-annex-matching-expression/)
+- [largefiles](https://git-annex.branchable.com/tips/largefiles/)
 
 ### backends - simple
 
@@ -199,7 +198,7 @@ SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.c.d
 ### Metadata
 
 - Can only be used with files in "annex", **not** those in "git".
-- https://git-annex.branchable.com/metadata/
+- [metadata](https://git-annex.branchable.com/metadata/)
 - [automatically adding metadata][git_annex_automatically_adding_metadata]
 
 Using metadata with views:
@@ -284,7 +283,7 @@ via HTTP
 
 ### via Gogs, a git-annex compatible git server
 
-- Gogs on your server or computer [wiki][gin_wiki_in_house] and [gin@home on github][gh_gin_at_home].
+- Gogs on your server or computer [wiki][gin_in_house] and [gin@home on github][gh_gin_at_home].
 - Gogs provided by [gin.g-node.org][]
 - Gogs on an embedded device with [Balena][]
   - My fork of has a minimal example (branch:

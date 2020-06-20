@@ -5,14 +5,13 @@ authors: [ "nathan-genetzky" ]
 event: "Penguins Unbound: June 2020 Meeting"
 event_url: "https://www.meetup.com/PenguinsUnbound/events/268428406/"
 location: "Jitsi"
-# summary: # TODO
-# abstract:# TODO
+summary: "Nathan will talk about Datalad and Git Annex to members of PenguinsUnbound"
+abstract: "Nathan will talk about Datalad and Git Annex to members of PenguinsUnbound"
 date: 2020-06-20T10:00:00
 date_end: 2020-06-20T12:00:00
 publishDate: "2020-06-14"
 
 featured: true
-# draft: true # TODO: Fix local display of drafts.
 
 tags:
 - "bash"
@@ -26,7 +25,7 @@ tags:
 
 links:
 - name: slides
-  url: "slides/2020-06-20-git-annex" # TODO
+  url: "slides/2020-06-20-git-annex"
   icon_pack: fas
   icon: chalkboard
 - name: git-annex
@@ -199,7 +198,7 @@ SHA256E-s0--e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.c.d
 ### Metadata
 
 - Can only be used with files in "annex", **not** those in "git".
-- https://git-annex.branchable.com/metadata/
+- [metadata](https://git-annex.branchable.com/metadata/)
 - [automatically adding metadata][git_annex_automatically_adding_metadata]
 
 Using metadata with views:

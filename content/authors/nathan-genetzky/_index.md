@@ -10,14 +10,17 @@ authors:
 superuser: true
 
 # Role/position
-role: Software Engineer
+role: Senior Software Engineer
 
 # Organizations/Affiliations
 organizations:
-- name: Vaddio
-  url: "http://www.vaddio.com/"
-- name: Dojofive
-  url: "http://www.dojofive.com/"
+- name: Appareo
+  url: https://appareo.com/
+
+# - name: Vaddio
+#   url: "http://www.vaddio.com/"
+# - name: Dojofive
+#   url: "http://www.dojofive.com/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: Software Engineer by Day, Electronic Hobbyist by Night.

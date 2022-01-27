@@ -19,6 +19,19 @@ RUN apt-get update && apt-get install -y ca-certificates openssl git curl && \
     tar xf ${VERSION}.tar.gz && \
     mv hugo /usr/bin/hugo
 
+COPY ./ /.devcontainer/
+
+ARG USERNAME=node
+ARG YADM_SRCDIR='/usr/local/share/yadm_repo_0.git'
+
+ARG YADM_SRCURI='https://home.genetzky.us'
+ARG YADM_SRCREV='master'
+
+# ARG YADM_SRCURI='/usr/local/share/yadm_src.git'
+# COPY ./.git/ "${YADM_SRCURI}"
+
+RUN USERNAME="${USERNAME}" YADM_SRCREV="${YADM_SRCREV}"  /.devcontainer/ngenetzky_devcontainer_debian.bash
+
 # Hugo dev server port
 EXPOSE 1313
 

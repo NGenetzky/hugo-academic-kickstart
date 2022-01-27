@@ -17,13 +17,27 @@ date_format = "Jan 2006"
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
+
+[[experience]]
+  title = "Senior Software Engineer"
+  company = "Appareo"
+  company_url = "https://appareo.com/"
+  location = "Minneapolis, MN"
+  date_start = "2021-12-01"
+  #date_end = ""
+  description = """
+- Helped design durable, low-power, cellular-connected devices.
+- Helped maintain a number of Yocto-based distributions and products.
+- Established process, tools and workflows to lead an efficient team.
+"""
+
 [[experience]]
   title = "Software Engineer"
   company = "Dojo Five"
   company_url = "http://www.dojofive.com/"
   location = "Minneapolis, MN"
   date_start = "2018-11-01"
-  #date_end = ""
+  date_end = "2021-12-01"
   description = """
 - Develop embedded software for Particle, Nordic, and STM32 microcontrollers
 - Utilized custom hardware with the Particle platform for a custom door
@@ -38,7 +52,7 @@ BLE services
   company_url = "http://www.vaddio.com/"
   location = "Minneapolis, MN"
   date_start = "2017-05-01"
-  #date_end = ""
+  date_end = "2021-12-01"
   description = """
 - Working with FPGA and python developers to create an integrated embedded
 system that routes audio and video signals in professionally built AV systems.

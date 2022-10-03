@@ -1,0 +1,3 @@
+#!/bin/bash
+# export HUGO_VERSION='0.97.3'
+export HUGO_VERSION='0.57.2'

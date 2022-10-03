@@ -13,5 +13,5 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   set -x
   SCRIPTDIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)"
 
-  _setup "$@"
+  _setup
 fi

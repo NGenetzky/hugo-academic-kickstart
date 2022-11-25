@@ -30,7 +30,7 @@ _bootstrap_hugo(){
 }
 
 _bootstrap_apts(){
-  sudo apt install shellcheck
+  command -v shellcheck > /dev/null || sudo apt install shellcheck
 }
 
 _bootstrap_hugo

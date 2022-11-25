@@ -1,7 +1,7 @@
 # https://github.com/jojomi/docker-hugo
 
 hugo:
-  image: jojomi/hugo:0.60.1
+  image: jojomi/hugo:0.66.0
   volumes:
      - ./:/src
      - ./public:/output

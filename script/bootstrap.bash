@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _bootstrap_hugo(){
-  _DEFAULT_HUGO_VERSION="0.57.2"
+  _DEFAULT_HUGO_VERSION="0.58.3"
   HUGO_VERSION="${HUGO_VERSION-"${_DEFAULT_HUGO_VERSION}"}"
 
   VARIANT='hugo_extended'
@@ -30,7 +30,7 @@ _bootstrap_hugo(){
 }
 
 _bootstrap_apts(){
-  sudo apt install shellcheck
+  command -v shellcheck > /dev/null || sudo apt install shellcheck
 }
 
 _bootstrap_hugo

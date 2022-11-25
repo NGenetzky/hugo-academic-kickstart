@@ -2,3 +2,4 @@ public/
 .idea/
 resources/_gen
 .local/
+/.hugo_build.lock

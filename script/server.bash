@@ -6,6 +6,7 @@ server()
 {
   cd "${SCRIPTDIR}/../"
   hugo serve $@
+  # hugo server --navigateToChanged
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

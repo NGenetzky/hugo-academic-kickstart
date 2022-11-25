@@ -43,16 +43,24 @@ footnotereturnlinkcontents = "<sup>^</sup>"
 ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [outputs]
-  # home = [ "HTML", "RSS", "JSON" ]
-  home = [
-      # theme = "academic"
-      "HTML", "RSS", "JSON",
-      # https://sourcethemes.com/academic/docs/search/#built-in
-      # "search",
-      # https://bitquabit.com/post/json-feed-with-hugo/
-      "jsonfeed"
-      ]
+  # "search", # https://sourcethemes.com/academic/docs/search/#built-in
+  # "jsonfeed" # https://bitquabit.com/post/json-feed-with-hugo/
+  # home = [ "HTML", "RSS", "JSON", "WebAppManifest" ] # from academic theme.
+  home = [ "HTML", "RSS", "JSON", "WebAppManifest", "jsonfeed" ]
   section = [ "HTML", "RSS" ]
+
+[mediaTypes."application/manifest+json"]
+  suffixes = ["webmanifest"]
+
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  rel = "manifest"
+
+# https://bitquabit.com/post/json-feed-with-hugo/
+[outputFormats.jsonfeed]
+  mediaType = "application/json"
+  baseName = "feed"
+  isPlainText = true
 
 # Configure BlackFriday Markdown rendering.
 #   See: https://gohugo.io/getting-started/configuration/#configure-blackfriday
@@ -73,9 +81,3 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   category = "categories"
   publication_type = "publication_types"
   author = "authors"
-
-# https://bitquabit.com/post/json-feed-with-hugo/
-[outputFormats.jsonfeed]
-  mediaType = "application/json"
-  baseName = "feed"
-  isPlainText = true

@@ -1,7 +1,9 @@
 {
     "recommendations": [
         "aaron-bond.better-comments",
+        "ban.spellright",
         "bierner.github-markdown-preview",
+        "bungcip.better-toml",
         "davidanson.vscode-markdownlint",
         "editorconfig.editorconfig",
         "github.vscode-pull-request-github",

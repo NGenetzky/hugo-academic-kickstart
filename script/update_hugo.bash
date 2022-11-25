@@ -8,6 +8,14 @@ update_hugo(){
     ./netlify.toml \
     ./script/bootstrap.bash \
     ./script/env
+
+  git commit \
+    -m "hugo: Upgrade to v${HUGO_VERSION_NEW} from v${HUGO_VERSION_OLD}" \
+    ./.devcontainer/devcontainer.json \
+    ./docker-compose.yml \
+    ./netlify.toml \
+    ./script/bootstrap.bash \
+    ./script/env
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then

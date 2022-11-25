@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _bootstrap_hugo(){
-  _DEFAULT_HUGO_VERSION="0.58.3"
+  _DEFAULT_HUGO_VERSION="0.60.1"
   HUGO_VERSION="${HUGO_VERSION-"${_DEFAULT_HUGO_VERSION}"}"
 
   VARIANT='hugo_extended'

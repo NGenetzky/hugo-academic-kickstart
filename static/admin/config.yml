@@ -1,10 +1,19 @@
+# /admin/config.yml
+
 backend:
-  name: test-repo
+  name: git-gateway
+  # The branch where published content is stored. All CMS commits and PRs are
+  # made to this branch.
+  branch: "master"
+  # cms_label_prefix: "netlify-cms/"
 
-site_url: https://example.com
+site_url: https://academic.genetzky.us/
 
+# https://www.netlifycms.org/docs/configuration-options/#publish-mode
 publish_mode: editorial_workflow
-media_folder: assets/uploads
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
 
 collections: # A list of collections the CMS should be able to edit
   - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit

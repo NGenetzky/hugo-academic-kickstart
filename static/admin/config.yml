@@ -2,10 +2,6 @@
 
 backend:
   name: git-gateway
-  # The branch where published content is stored. All CMS commits and PRs are
-  # made to this branch.
-  branch: "master"
-  # cms_label_prefix: "netlify-cms/"
   branch: main
   squash_merges: true
 
@@ -14,7 +10,7 @@ site_url: https://academic.genetzky.us/
 # https://www.netlifycms.org/docs/configuration-options/#publish-mode
 publish_mode: editorial_workflow
 
-media_folder: 'assets/media'
+media_folder: 'static/media'
 public_folder: '/media'
 
 collections: # A list of collections the CMS should be able to edit

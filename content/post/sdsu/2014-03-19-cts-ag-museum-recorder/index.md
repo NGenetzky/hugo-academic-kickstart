@@ -9,7 +9,7 @@ categories = [
   "sdsu",
   "2012-sdsu-cts"
 ]
-projects = ["2012-sdsu-cts"]
+projects = ["sdsu/2012-sdsu-cts"]
 [image]
   focal_point = "Center"
 +++

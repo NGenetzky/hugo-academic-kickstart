@@ -14,7 +14,9 @@
 			// Example versions: latest, 0.73.0, 0,71.1
 			// Rebuild the container if it already exists to update.
 			// "VERSION": "0.73.0",
-			"VERSION": "0.57.2",
+			// "VERSION": "0.57.2",
+			"VERSION": "0.73.0",
+
 			// "VERSION": "latest",
 			// Update NODE_VERSION to pick the Node.js version: 12, 14
 			"NODE_VERSION": "14",
@@ -25,7 +27,7 @@
 	"settings": {
 		"html.format.templating": true,
 	},
-	
+
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"bungcip.better-toml",

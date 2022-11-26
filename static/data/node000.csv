@@ -87,7 +87,7 @@ Note,5,24,,,"*  Fix the Problem, Not the Blame
 It doesn't really matter whether the bug is your fault or someone else's—it is still your problem, and it still needs to be fixed."
 Note,5,25,,,"*  Don't Panic When Debugging
 Take a deep breath and THINK! about what could be causing the bug."
-Note,5,26,,,"*  "select" Isn't Broken.
+Note,5,26,,,"*  select Isn't Broken.
 It is rare to find a bug in the OS or the compiler, or even a third-party product or library. The bug is most likely in the application."
 Note,5,27,,,"*  Don't Assume It—Prove It
 Prove your assumptions in the actual environment-- with real data and boundary conditions."
@@ -108,7 +108,7 @@ Exceptions can suffer from all the readability and maintainability problems of c
 Note,5,35,,,"*  Finish What You Start
 Where possible, the routine or object that allocates a resource should be responsible for deallocating it."
 Note,5,36,,,"*  Minimize Coupling Between Modules
-Avoid coupling by writing "shy" code and applying the Law of Demeter."
+Avoid coupling by writing shy code and applying the Law of Demeter."
 Note,5,37,,,"*  Configure, Don't Integrate
 Implement technology choices for an application as configuration options, not through integration or engineering."
 Note,5,38,,,"*  Put Abstractions in Code, Details in Metadata
@@ -146,7 +146,7 @@ Invest in the abstraction, not the implementation. Abstractions can survive the 
 Note,5,54,,,"*  Use a Project Glossary
 Create and maintain a single source of all the specific terms and vocabulary for a project."
 Note,5,55,,,"*  Don't Think Outside the Box–Find the Box
-When faced with an impossible problem, identify the real constraints. Ask yourself: "Does it have to be done this way? Does it have to be done at all?""
+When faced with an impossible problem, identify the real constraints. Ask yourself: Does it have to be done this way? Does it have to be done at all?"
 Note,5,56,,,"*  Start When You're Ready.
 You've been building experience all your life. Don't ignore niggling doubts."
 Note,5,57,,,"*  Some Things Are Better Done than Described
@@ -178,7 +178,7 @@ Come to understand your users' expectations, then deliver just that little bit m
 Note,5,70,,,"*  Sign Your Work
 Craftsmen of an earlier age were proud to sign their work. You should be, too."
 Heading,3,2,,,"Languages To Learn"
-Note,4,1,,,"Tired of C, C++, and Java? Try CLOS, Dylan, Eiffel, Objective C, Prolog, Smalltalk, or TOM. Each of these languages has different capabilities and a different "flavor." Try a small project at home using one or more of them."
+Note,4,1,,,Tired of C C++ and Java? Try CLOS Dylan Eiffel Objective C Prolog Smalltalk or TOM. Each of these languages has different capabilities and a different flavor. Try a small project at home using one or more of them.
 Heading,3,3,,,"The WISDOM Acrostic"
 Note,4,1,,,"What do you want them to learn?
 What is their interest in what you've got to say?

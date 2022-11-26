@@ -32,6 +32,12 @@ projects: []
 
 - [github user ngenetzky has ID 12733783](https://api.github.com/user/12733783/)
 
-### Starred
+## Example
+
+### getCSV
+
+{{< getcsv >}}
+
+### ghStarred shortcode
 
 {{< ghStarred url="https://api.github.com/user/12733783/starred?page=1" >}}
